@@ -1,0 +1,99 @@
+{
+  "_nota": "Carta transcrita dels PDF del client (Carta/CAT_ESP i FR_EN, octubre 2026). Sense preus: els preus només són al PDF (decisió 19-10-2026). Per canviar un plat, editar aquí i tornar a executar src/build.py.",
+  "seccions": [
+    {
+      "id": "picar",
+      "t": {"ca": "Per picar", "es": "Para picar", "fr": "À grignoter", "en": "Small plates"},
+      "plats": [
+        {"ca": "Les anxoves de l'Eni", "es": "Las anchoas del Eni", "fr": "Les anchois d'Eni", "en": "Eni's cured anchovies"},
+        {"ca": "Pernil ibèric, 100 g", "es": "Jamón ibérico, 100 g", "fr": "Jambon ibérique, 100 g", "en": "Iberian ham, 100 g"},
+        {"ca": "Seitons amb taronja i aigua d'olives", "es": "Boquerones con naranja y agua de olivas", "fr": "Anchois à l'orange et à l'eau d'olive", "en": "Anchovies with orange and olive water"},
+        {"ca": "Pa de coca amb tomàquet", "es": "Pan de coca con tomate", "fr": "Fougasse frottée à la tomate", "en": "Catalan flatbread with tomato"}
+      ]
+    },
+    {
+      "id": "fregits",
+      "t": {"ca": "Fregits per picar", "es": "Fritos para picar", "fr": "Fritures à grignoter", "en": "Fried bites"},
+      "plats": [
+        {"ca": "Croquetes del dia", "es": "Croquetas del día", "fr": "Croquettes du jour", "en": "Croquettes of the day"},
+        {"ca": "Peixet fregit", "es": "Pescadito frito", "fr": "Friture de petit poisson", "en": "Fresh fried fish"},
+        {"ca": "Patates braves", "es": "Patatas bravas", "fr": "Pommes de terre à la sauce brava", "en": "Potatoes with spicy brava sauce"},
+        {"ca": "Calamars a l'andalusa amb all i oli blanc i negre", "es": "Calamares a la andaluza con alioli blanco y negro", "fr": "Calamars à l'andalouse, aïoli noir et blanc", "en": "Andalusian-style squid with black and white aioli"},
+        {"ca": "Bunyol de bacallà amb sobrassada i mel trufada", "es": "Buñuelo de bacalao con sobrasada y miel trufada", "fr": "Accras de morue à la sobrasada et au miel truffé", "en": "Cod fritter with Majorcan sobrasada and truffled honey"},
+        {"ca": "El nostre turbot fregit", "es": "Nuestro rodaballo frito", "fr": "Notre turbot frit", "en": "Our fried turbot"}
+      ]
+    },
+    {
+      "id": "amanides",
+      "t": {"ca": "Amanides fresques", "es": "Ensaladas frescas", "fr": "Salades", "en": "Fresh salads"},
+      "plats": [
+        {"ca": "Amanida de tomàquet i burrata amb alfàbrega i fonoll", "es": "Ensalada de tomate y burrata con albahaca e hinojo", "fr": "Salade de tomates et burrata au basilic et fenouil", "en": "Tomato and burrata salad with basil and fennel"},
+        {"ca": "Tàrtar de salmó marinat a casa amb textures de carbassó, anet i mató", "es": "Tartar de salmón marinado en casa con texturas de calabacín, eneldo y requesón", "fr": "Textures de courgettes et saumon mariné maison, aneth et fromage blanc", "en": "House-marinated salmon tartare with courgette textures, dill and cottage cheese"},
+        {"ca": "Salmorejo amb tomàquet deshidratat, formatge blau, tomàquets cirerol i crostons de pa", "es": "Salmorejo con tomate deshidratado, queso azul, cherrys y picatostes", "fr": "Salmorejo aux tomates déshydratées, fromage bleu, tomates cerises et croûtons", "en": "Salmorejo with dried tomato, blue cheese, cherry tomatoes and croutons"},
+        {"ca": "Empedrat de mongetes, llom de tonyina Bluefin, ou dur i piparres", "es": "Empedrado de judías, lomo de atún Bluefin, huevo duro y piparras", "fr": "Salade de haricots, longe de thon rouge, œuf dur et piparras", "en": "Bean salad with Bluefin tuna loin, hard-boiled egg and piparra peppers"},
+        {"ca": "Amanida d'enciam i ceba tendre amb olives negres, pebrot vermell, anxoves i pa fregit", "es": "Ensalada de lechuga y cebolla tierna con aceitunas negras, pimiento rojo, anchoas y pan frito", "fr": "Salade de laitue et oignons aux olives noires, poivron rouge, anchois et pain frit", "en": "Lettuce and spring onion salad with black olives, red pepper, anchovies and fried bread"},
+        {"ca": "Carpaccio de gamba amb vinagreta de mango, anacards i brots frescos", "es": "Carpaccio de gamba con vinagreta de mango, anacardos y brotes frescos", "fr": "Carpaccio de crevettes, vinaigrette de mangue, noix de cajou et pousses fraîches", "en": "Prawn carpaccio with mango vinaigrette, cashews and fresh sprouts"}
+      ]
+    },
+    {
+      "id": "clova",
+      "t": {"ca": "La clova", "es": "Moluscos", "fr": "Fruits de mer", "en": "Shellfish"},
+      "plats": [
+        {"ca": "Musclos amb salsa thai o al vapor", "es": "Mejillones con salsa thai o al vapor", "fr": "Moules à la sauce thaï ou à la vapeur", "en": "Mussels, steamed or with Thai sauce"},
+        {"ca": "Escopinyes amb salsa verda o al vapor", "es": "Berberechos con salsa verde o al vapor", "fr": "Coques à la sauce verte ou à la vapeur", "en": "Cockles, steamed or with green sauce"},
+        {"ca": "Cloïsses amb salsa verda o al vapor", "es": "Almejas con salsa verde o al vapor", "fr": "Palourdes à la sauce verte ou à la vapeur", "en": "Clams, steamed or with green sauce"}
+      ]
+    },
+    {
+      "id": "ceviches",
+      "t": {"ca": "Ceviches i tiradits", "es": "Ceviches y tiraditos", "fr": "Ceviches et tiraditos", "en": "Ceviche and tiradito"},
+      "plats": [
+        {"ca": "Ceviche de la casa", "es": "Ceviche de la casa", "fr": "Ceviche maison", "en": "Homemade ceviche"},
+        {"ca": "Tiradito del dia", "es": "Tiradito del día", "fr": "Tiradito du jour", "en": "Tiradito of the day"}
+      ]
+    },
+    {
+      "id": "recomanats",
+      "t": {"ca": "Arrossos i peix", "es": "Arroces y pescado", "fr": "Riz et poisson", "en": "Rice and fish"},
+      "nota": {"ca": "Arrossos: mínim 2 persones, uns 20 minuts.", "es": "Arroces: mínimo 2 personas, unos 20 minutos.", "fr": "Riz : minimum 2 personnes, environ 20 minutes.", "en": "Rice dishes: minimum 2 people, about 20 minutes."},
+      "plats": [
+        {"ca": "Arròs melós de sípia i gamba vermella", "es": "Arroz meloso de sepia y gamba roja", "fr": "Riz crémeux à la seiche et crevettes rouges", "en": "Creamy rice with cuttlefish and red prawn"},
+        {"ca": "Arròs de ceps i costelló duroc a baixa temperatura", "es": "Arroz de boletus y costilla duroc a baja temperatura", "fr": "Riz aux cèpes et côtes de porc Duroc cuites à basse température", "en": "Boletus rice with slow-cooked Duroc pork ribs"},
+        {"ca": "Els nostres peixos, sempre frescos: a la donostiarra, a l'allet o a la planxa, amb patates panaderes i verdures de temporada", "es": "Nuestros pescados, siempre frescos: a la donostiarra, al ajillo o a la plancha, con patatas panaderas y verduras de temporada", "fr": "Notre poisson, toujours frais : à la donostiarra, à l'ail ou grillé, avec pommes de terre au four et légumes de saison", "en": "Our fish, always fresh: donostiarra-style, with garlic or grilled, served with baked potatoes and seasonal vegetables"}
+      ]
+    },
+    {
+      "id": "brioix",
+      "t": {"ca": "Brioix i burger", "es": "Brioche y burger", "fr": "Brioche et burger", "en": "Brioche and burger"},
+      "plats": [
+        {"ca": "Brioix amb melós de vedella, burrata, ceba encurtida, ruca i maionesa sriracha, amb patates fregides", "es": "Brioche con meloso de ternera, burrata, cebolla encurtida, rúcula y mayonesa sriracha, con patatas fritas", "fr": "Brioche au bœuf fondant, burrata, oignons marinés, roquette et mayonnaise sriracha, avec frites", "en": "Brioche with slow-cooked beef, burrata, pickled onion, rocket and sriracha mayo, with fries"},
+        {"ca": "La burger del Xiri: vaca vella amb formatge, ou fregit, maionesa de kimchi i ruca", "es": "La burger del Xiri: vaca vieja con queso, huevo frito, mayonesa de kimchi y rúcula", "fr": "Le burger du Xiri : vieille vache, fromage, œuf au plat, mayonnaise au kimchi et roquette", "en": "The Xiri burger: aged beef with cheese, fried egg, kimchi mayo and rocket"}
+      ]
+    },
+    {
+      "id": "postres",
+      "t": {"ca": "Postres", "es": "Postres", "fr": "Desserts", "en": "Desserts"},
+      "plats": [
+        {"ca": "Crema de llimona amb crumble de iogurt, melmelada de fruits vermells, gerds i sorbet de llima", "es": "Crema de limón con crumble de yogur, mermelada de frutos rojos, frambuesas y sorbete de lima", "fr": "Crème de citron au crumble de yaourt, confiture de fruits rouges, framboises et sorbet au citron vert", "en": "Lemon cream with yogurt crumble, red berry jam, raspberries and lime sorbet"},
+        {"ca": "Coulant de xocolata amb gelat d'avellana i avellanes garrapinyades", "es": "Coulant de chocolate con helado de avellana y avellanas garrapiñadas", "fr": "Coulant au chocolat, glace noisette et noisettes caramélisées", "en": "Chocolate coulant with hazelnut ice cream and candied hazelnuts"},
+        {"ca": "Cheesecake de vainilla, teules de xocolata blanca i festucs amb gelatina de moscatell", "es": "Cheesecake de vainilla, tejas de chocolate blanco y pistachos con gelatina de moscatel", "fr": "Cheesecake à la vanille, tuiles de chocolat blanc et pistaches, gelée de muscat", "en": "Vanilla cheesecake, white chocolate tuiles and pistachios with muscat jelly"},
+        {"ca": "Tarta tatin amb nata muntada i pomes àcides", "es": "Tarta tatin con nata montada y manzanas ácidas", "fr": "Tarte tatin à la chantilly et pommes acidulées", "en": "Tarte tatin with whipped cream and tart apples"}
+      ]
+    }
+  ],
+  "vins": {
+    "t": {"ca": "Vins i escumosos", "es": "Vinos y espumosos", "fr": "Vins et vins pétillants", "en": "Wines and sparkling wines"},
+    "p": {
+      "ca": "Escumosos, blancs, rosats, negres i dolços, amb molts vins de l'Empordà i una bona part de naturals, ecològics i biodinàmics. Pregunta pels vins fora de carta.",
+      "es": "Espumosos, blancos, rosados, tintos y dulces, con muchos vinos del Empordà y buena parte de naturales, ecológicos y biodinámicos. Pregunta por los vinos fuera de carta.",
+      "fr": "Pétillants, blancs, rosés, rouges et liquoreux, avec beaucoup de vins de l'Empordà et une bonne part de vins nature, bio et biodynamiques. Demandez les vins hors carte.",
+      "en": "Sparkling, white, rosé, red and dessert wines, many from the Empordà and a good share natural, organic and biodynamic. Ask about the wines off the menu."
+    }
+  },
+  "alergies": {
+    "ca": "Si tens alguna al·lèrgia o intolerància alimentària, digues-ho al nostre personal.",
+    "es": "Si tienes alguna alergia o intolerancia alimentaria, díselo a nuestro personal.",
+    "fr": "En cas d'allergie ou d'intolérance alimentaire, prévenez notre personnel.",
+    "en": "If you have any food allergy or intolerance, please tell our staff."
+  }
+}

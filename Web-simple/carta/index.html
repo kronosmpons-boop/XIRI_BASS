@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carta · Xiringuito la Sal, xiringuito a Cadaqués</title>
+<meta name="description" content="La carta de Xiringuito la Sal, a la platja de Ses Oliveres de Cadaqués: paella i arrossos, peix fresc, coses per picar, amanides i postres.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EF">
+<link rel="canonical" href="https://www.xiringuitolasal.com/carta/">
+<link rel="alternate" hreflang="ca" href="https://www.xiringuitolasal.com/carta/">
+<link rel="alternate" hreflang="es" href="https://www.xiringuitolasal.com/es/carta/">
+<link rel="alternate" hreflang="fr" href="https://www.xiringuitolasal.com/fr/carte/">
+<link rel="alternate" hreflang="en" href="https://www.xiringuitolasal.com/en/menu/">
+<link rel="alternate" hreflang="x-default" href="https://www.xiringuitolasal.com/en/menu/">
+<meta property="og:url" content="https://www.xiringuitolasal.com/carta/">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Carta · Xiringuito la Sal, xiringuito a Cadaqués">
+<meta property="og:description" content="La carta de Xiringuito la Sal, a la platja de Ses Oliveres de Cadaqués: paella i arrossos, peix fresc, coses per picar, amanides i postres.">
+<meta property="og:image" content="https://www.xiringuitolasal.com/assets/logo/og-terrassa-1200x630.jpg">
+<link rel="icon" href="../assets/logo/favicon-32.png" sizes="32x32">
+<link rel="icon" href="../assets/logo/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="../assets/logo/apple-touch-icon-180.png">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/fraunces-600-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/commissioner-400-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+/* ------------------------------------------------------------------
+   XIRI LA SAL · versió simple (21-10-2026)
+   Referència del jefe: gammarus.es. Fons llis de sorra, fotos a sang,
+   blocs de text + foto alternats, una sola acció: trucar per reservar.
+   2 famílies (Fraunces títols · Commissioner text), 1 accent (taronja del logo).
+   ------------------------------------------------------------------ */
+:root{
+  --bg:#FBF6EF;            /* sorra: fons de la pàgina */
+  --surface:#F1E7D9;       /* sorra fosca: blocs de text, peu */
+  --text:#1E1B18;          /* carbó */
+  --text-2:#57504A;        /* text secundari */
+  --line:rgba(30,27,24,.14);
+  --accent:#FF3000;        /* taronja del logo: botons (text carbó a sobre, 4.58:1) */
+  --accent-text:#C42200;   /* taronja per a text petit sobre clar (5.87:1) */
+  --on-photo:#FFFFFF;
+
+  --f-title:'Fraunces', Georgia, 'Times New Roman', serif;
+  --f-text:'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* escala tipogràfica (8 rols) */
+  --fs-xs:.75rem;    /* 12 · etiquetes */
+  --fs-sm:.875rem;   /* 14 · peus, notes */
+  --fs-md:1rem;      /* 16 · text */
+  --fs-lg:1.125rem;  /* 18 · entradeta */
+  --fs-xl:1.375rem;  /* 22 · títol de targeta */
+  --fs-2xl:clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);   /* 28-40 · títol de secció */
+  --fs-3xl:clamp(2.25rem, 1.4rem + 3.2vw, 4rem);     /* 36-64 · títol de portada */
+
+  /* espai (escala de 8) */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; --s8:128px;
+  --sec:96px;              /* aire de secció: 96 a l'escriptori, 64 al mòbil i en pantalles baixes */
+  --cab:calc(100vh - var(--nav-h));   /* alçada útil sota el menú: cada secció hi cap */
+  --wrap:1200px;
+  --gut:clamp(16px, 4vw, 48px);
+  --nav-h:72px;
+  --radius:4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 var(--fs-md)/1.65 var(--f-text);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-title);font-weight:600;line-height:1.12;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+p+p{margin-top:var(--s2)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:var(--s2);top:-100px;z-index:100;background:var(--text);color:var(--bg);padding:var(--s1) var(--s2)}
+.skip-link:focus{top:var(--s2)}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.sec{padding-block:var(--sec);min-height:var(--cab);display:flex;flex-direction:column;justify-content:center}
+.sec>.wrap{width:100%}
+@supports (height:100svh){:root{--cab:calc(100svh - var(--nav-h))}}
+@media (max-width:860px), (max-height:820px){:root{--sec:64px}}
+/* Etiqueta de secció: la mateixa paraula que el menú */
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:var(--s2);font-size:var(--fs-xs);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2)}
+.eyebrow::before{content:"";width:28px;height:12px;flex:none;background:url("../assets/img/ma.webp") left center/contain no-repeat}
+/* Capçalera de secció: títol a l'esquerra, accions a la dreta (la mateixa a totes) */
+.cap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--s3) var(--s5);margin-bottom:var(--s5)}
+.cap h2{font-size:var(--fs-2xl);max-width:22ch}
+.cap p{margin-top:var(--s2);max-width:52ch;color:var(--text-2);font-size:var(--fs-lg)}
+.cap-accions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}
+/* Dos botons junts: sempre el mateix ample */
+.cap-accions:has(.btn + .btn){display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
+@media (max-width:560px){ .cap-accions{width:100%;flex-wrap:nowrap} .cap-accions .btn{flex:1 1 0;padding-inline:12px;font-size:var(--fs-xs);letter-spacing:.06em} }
+@media (max-height:820px) and (min-width:861px){ .cap{margin-bottom:var(--s4)} }
+
+/* ---------- Botons: un sol component, dues variants ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);min-height:48px;padding:12px 28px;border:1px solid transparent;border-radius:var(--radius);
+  font:600 var(--fs-sm)/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-accent{background:var(--accent);color:var(--text)}
+.btn-accent:hover{background:#E62B00}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+.on-photo .btn-line{color:var(--on-photo)}
+.on-photo .btn-line:hover{background:var(--on-photo);color:var(--text);border-color:var(--on-photo)}
+.link{display:inline-block;padding-block:12px;font-weight:600;color:var(--accent-text);text-decoration:underline;text-underline-offset:4px}
+.link:hover{color:var(--text)}
+
+/* ---------- Capçalera ---------- */
+/* Menú flotant: una barra arrodonida separada de les vores, per sobre de la foto */
+.nav{position:fixed;top:12px;left:var(--gut);right:var(--gut);max-width:calc(var(--wrap) - 2 * var(--gut));margin-inline:auto;z-index:50;color:var(--text);
+  background:rgba(251,246,239,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:14px;box-shadow:0 10px 30px -14px rgba(30,27,24,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.nav-in{height:var(--nav-h);display:flex;align-items:center;gap:var(--s4);padding-inline:var(--s3)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;padding-right:var(--s3)}
+.brand{min-height:44px}
+.brand img{width:40px;height:44px;object-fit:contain}
+.brand .logo-color{display:none}
+.brand-nom{font:600 var(--fs-sm)/1.1 var(--f-text);letter-spacing:.08em;text-transform:uppercase}   /* com els enllaços del menú */
+.nav .brand-nom{display:none}   /* al menú flotant n'hi ha prou amb el logo: el nom ja és a tot arreu */
+.nav-links{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}
+.nav-links a,.brand-nom{white-space:nowrap}
+.nav-links a{font-size:var(--fs-sm);font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding-block:var(--s1);border-bottom:1px solid transparent}
+.nav-links a:hover{border-bottom-color:var(--accent)}
+.nav-links a:focus:not(:focus-visible){border-bottom-color:transparent}
+.lang{display:flex;gap:2px}
+.lang button,.lang a{min-width:44px;min-height:44px;padding:0 6px;border:0;background:none;color:inherit;font:600 var(--fs-xs)/1 var(--f-text);letter-spacing:.08em;cursor:pointer;opacity:.75;border-bottom:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.lang [aria-pressed="true"],.lang [aria-current="page"]{opacity:1;border-bottom:2px solid var(--accent)}
+.lang svg{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(30,27,24,.15)}
+.lang a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:12px 20px}
+.nav.obert{background:var(--bg)}
+.nav.solid .logo-blanc,.nav.obert .logo-blanc{display:none}
+.nav.solid .logo-color,.nav.obert .logo-color{display:block}
+.nav.amagat{transform:translateY(calc(-100% - 16px))}
+/* Escriptori: el contenidor del menú no existeix (els fills van en línia a la capçalera) */
+.menu{display:contents}
+.menu-xarxes{display:none}
+.hamb{display:none}
+/* Ordre a l'escriptori: seccions, idiomes, reserva. Al mòbil els idiomes queden fora del menú, sempre a la vista */
+.nav-in>nav,.menu>nav{order:1}
+.nav-in>.lang{order:2}
+.menu>.btn{order:3}
+.hamb{order:4}
+.nav-tel{display:none}
+@media (max-width:960px){
+  .nav-in{gap:var(--s1);padding-inline:var(--s2)}
+  .brand{margin-right:auto}
+  .brand,.nav-tel,.hamb{flex:none}
+  .brand{min-width:44px}
+  .nav-tel{order:3;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--text)}
+  .nav-tel svg{width:20px;height:20px}
+  .nav-in>.lang button,.nav-in>.lang a{min-width:40px}
+  .lang{flex:none}
+  .hamb{display:grid;place-content:center;gap:6px;width:44px;height:44px;margin-right:-10px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+  .hamb span{display:block;width:24px;height:2px;background:currentColor;transition:transform .3s,opacity .2s}
+  .nav.obert .hamb span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .nav.obert .hamb span:nth-child(2){opacity:0}
+  .nav.obert .hamb span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .menu{position:fixed;top:calc(var(--nav-h) + 20px);left:var(--gut);right:var(--gut);border-radius:14px;display:none;flex-direction:column;gap:var(--s4);max-height:calc(100vh - var(--nav-h));overflow-y:auto;
+    padding:var(--s4) var(--s3) var(--s5);background:var(--bg);color:var(--text);box-shadow:0 12px 24px -12px rgba(30,27,24,.25)}
+  .nav.obert .menu{display:flex}
+  .nav-links{flex-direction:column;gap:0}
+  .nav-links a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font:600 var(--fs-xl)/1.2 var(--f-title);letter-spacing:0;text-transform:none}
+  .nav-links a:hover{border-bottom-color:var(--line);color:var(--accent-text)}
+  .nav-in>.lang{gap:0}
+  .menu .btn{width:100%;min-height:52px}
+  .menu-xarxes{order:4;display:flex;justify-content:center;gap:var(--s5);list-style:none;margin:0;padding:0}
+  .menu-xarxes a{display:inline-flex;align-items:center;gap:var(--s1);min-height:44px;text-decoration:none;font-weight:600;font-size:var(--fs-sm)}
+  .menu-xarxes a:hover{color:var(--accent-text)}
+  .menu-xarxes svg{width:22px;height:22px}
+  .nav.obert .nav-tel{visibility:hidden}
+  .menu .btn .btn-txt{display:inline}
+}
+@media (max-width:560px){
+  .brand-nom{display:none}
+  .nav-in{gap:4px;padding-inline:12px}
+  .nav-in>.lang button,.nav-in>.lang a{min-width:34px;padding:0 3px}
+  .hamb{margin-right:0}
+}
+
+/* ---------- Portada: foto a sang, logo i títol al centre ---------- */
+
+/* Franja de reserva just sota la portada (com el «Book here» de Gammarus) */
+.franja{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--s1) var(--s3);min-height:72px;padding:var(--s2) var(--gut);background:var(--accent);color:var(--text);text-decoration:none;text-align:center}
+.franja span{font-size:var(--fs-sm);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.franja strong{font:600 var(--fs-xl)/1 var(--f-title);letter-spacing:.02em}
+.franja svg{width:22px;height:22px}
+.franja-num{display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
+@media (max-width:560px){ .franja{flex-direction:column;gap:4px;padding:var(--s2) var(--gut)} .franja span{font-size:var(--fs-xs);letter-spacing:.12em} }
+.franja:hover strong{text-decoration:underline;text-underline-offset:5px}
+
+/* ---------- Blocs de text + foto a sang (patró de Gammarus) ---------- */
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:var(--cab)}
+/* el text, centrat dins la seva columna: el mateix aire a esquerra i dreta */
+.split-txt{display:flex;flex-direction:column;justify-content:center;padding:var(--sec) clamp(24px, 6vw, 96px)}
+.split-txt>*{width:100%;max-width:460px;margin-inline:auto}
+.split-txt h2{font-size:var(--fs-2xl);max-width:18ch}
+.split-txt h1{font-size:var(--fs-2xl);max-width:18ch}
+/* Sense portada: la primera secció comença sota el menú */
+main > .split:first-child{margin-top:0}
+main > .split:first-child .split-txt{padding-top:calc(var(--nav-h) + 12px + var(--sec))}
+.split-txt p{margin-top:var(--s3);max-width:44ch;color:var(--text-2);font-size:var(--fs-lg)}
+.split-txt p+p{margin-top:var(--s2)}
+.split-txt .accions{margin-top:var(--s4);display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.split-img{position:relative;min-height:320px}
+.split-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split.fosc .split-txt{background:var(--surface)}
+@media (max-width:860px){
+  .split.primer .split-img{margin-top:0}
+  main > .split:first-child .split-txt{padding-top:var(--s6)}
+  .split{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;min-height:var(--cab)}
+  .split-img{order:-1;aspect-ratio:16/10;min-height:0}
+  .split-txt{padding:var(--s6) var(--gut)}
+}
+
+
+/* ---------- L'ambient: graella de fotos amb gent (5 fotos, una d'ample) ---------- */
+.ambient-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:var(--s2);
+  height:clamp(400px, calc(var(--cab) - 2 * var(--sec) - 240px), 680px);list-style:none;margin:0;padding:0}
+.ambient-grid li{position:relative;overflow:hidden;background:var(--surface)}
+.ambient-grid li.ample{grid-column:span 2}
+.ambient-grid li.alt{grid-row:span 2}
+.ambient-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ambient-grid li:hover img{transform:scale(1.04)}
+@media (max-width:860px){
+  .ambient-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:180px;height:auto}
+  .ambient-grid li.alt{grid-row:span 2}
+}
+
+/* ---------- La carta: plats grans en una fila que llisca ---------- */
+.banda{position:relative;display:grid;place-items:center;min-height:min(72vh,640px);padding:var(--sec) var(--gut);text-align:center;color:var(--on-photo);overflow:hidden}
+.banda>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banda::after{content:"";position:absolute;inset:0;background:rgba(20,16,12,.5)}
+.banda-in{position:relative;z-index:1;max-width:720px;display:flex;flex-direction:column;align-items:center}
+.banda h2{font-size:var(--fs-2xl)}
+.banda p{margin-top:var(--s3);font-size:var(--fs-lg)}
+.banda .accions{margin-top:var(--s4);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s2)}
+
+.carta-sec-web{background:var(--surface)}
+/* tres plats a la vista, verticals (4:5) i grans; la resta, amb les fletxes o lliscant */
+.plats{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;list-style:none;margin:0;padding:0;
+  --ph-max:clamp(300px, calc(var(--cab) - 2 * var(--sec) - 300px), 560px)}
+.plats::-webkit-scrollbar{display:none}
+.plat{flex:0 0 calc((100% - 2 * var(--s3)) / 3);scroll-snap-align:start}
+.plats-peu{display:flex;justify-content:flex-end;gap:var(--s2);margin-top:var(--s3)}
+/* Nom del plat sobre la foto (no suma alçada): etiqueta a dalt, nom a sota, sobre un degradat fosc */
+.plat a{position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:4/5;max-height:var(--ph-max);width:100%;padding:var(--s3);overflow:hidden;color:var(--on-photo);text-decoration:none;background:var(--surface)}
+.plat .ph{position:absolute;inset:0}
+.plat .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,0) 35%,rgba(20,16,12,.72) 100%)}
+.plat img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.plat a:hover img{transform:scale(1.04)}
+.plat h3,.plat small{position:relative;z-index:1}
+.plat h3{font:600 var(--fs-xl)/1.25 var(--f-title);text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.plat small{order:-1;margin-bottom:4px;font-size:var(--fs-xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.plat-nota{display:flex;flex-direction:column;justify-content:center;gap:var(--s1);padding:var(--s3);background:var(--surface)}
+.plat-nota h3{font-size:var(--fs-xl);margin-bottom:var(--s1)}
+.plat-nota p{color:var(--text-2);font-size:var(--fs-sm);line-height:1.5}
+.plat-nota p+p{margin-top:0}
+/* Mòbil: els plats llisquen de costat (com Instagram) i la secció cap en una pantalla */
+@media (max-width:960px){
+  .plats{gap:var(--s2);overscroll-behavior-x:contain}
+  .plat,.plat-nota{flex:0 0 84%}
+  .plat a{max-height:min(62vh,560px)}
+  .plats-peu{display:none}
+}
+/* Punts sota el carrusel: gris = hi ha més fotos; fosc = la que es veu */
+.punts{display:none}
+@media (max-width:960px){
+  .punts{display:flex;justify-content:center;gap:var(--s1);margin-top:var(--s3)}
+  .punts span{width:8px;height:8px;border-radius:50%;background:#CFC6BA;transition:background-color .2s,transform .2s}
+  .punts span.on{background:var(--text-2);transform:scale(1.25)}
+}
+
+/* ---------- Opinions ---------- */
+.opinions{background:var(--bg)}
+.ressenyes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);list-style:none;margin:0;padding:0}
+.ressenya[hidden]{display:none}
+.ressenyes{padding-top:var(--s2)}
+.ressenya{position:relative;display:flex;flex-direction:column;gap:var(--s2);padding:var(--s5) var(--s4) var(--s4);background:#FFFDF8;
+  box-shadow:0 1px 2px rgba(30,27,24,.08),0 12px 24px -12px rgba(30,27,24,.28);rotate:var(--gir,0deg)}
+.ressenya:nth-child(3n+1){--gir:-1.2deg}
+.ressenya:nth-child(3n+2){--gir:.9deg}
+.ressenya:nth-child(3n){--gir:-.5deg}
+/* Tros de cel·lo: translúcid, una mica tort i amb les puntes estripades */
+.ressenya::before{content:"";position:absolute;top:-14px;left:50%;width:104px;height:30px;translate:-50% 0;rotate:calc(var(--gir,0deg) * -2.5 - 2deg);
+  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 60%),rgba(236,226,200,.72);box-shadow:0 1px 2px rgba(30,27,24,.12);
+  clip-path:polygon(0 4%,4% 0,8% 6%,12% 0,88% 0,92% 5%,96% 0,100% 6%,100% 94%,96% 100%,92% 95%,88% 100%,12% 100%,8% 94%,4% 100%,0 95%)}
+.ressenya .estrelles{color:var(--accent-text);letter-spacing:.12em;font-size:var(--fs-md)}
+.ressenya blockquote{margin:0;flex:1;font:600 var(--fs-lg)/1.5 var(--f-title)}
+.ressenya footer{font-size:var(--fs-sm);color:var(--text-2)}
+.ressenya footer b{color:var(--text);font-weight:600}
+.ressenya .trad{font-style:italic}
+.ressenya.entra{animation:entra .45s ease both}
+@keyframes entra{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+.opinions-peu{margin-top:var(--s4);text-align:right}
+.fletxa{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--text);border-radius:50%;background:none;color:var(--text);cursor:pointer}
+.fletxa:hover{background:var(--text);color:var(--bg)}
+.fletxa svg{width:20px;height:20px}
+@media (max-width:1000px){ .ressenyes{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .ressenyes{grid-template-columns:1fr} .opinions-peu{text-align:left} }
+
+/* ---------- Samarreta: com a la versió desenfadada (sobre la fusta del xiringuito) ---------- */
+.fusta{background:var(--surface) url("../assets/img/fusta.webp") center/cover}
+.sam-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--s6);align-items:center}
+.sam-fotos{position:relative;width:min(100%, calc((var(--cab) - 2 * var(--sec)) * .78));aspect-ratio:4/5;justify-self:center}
+.sam-f{position:absolute;margin:0;width:66%}
+.sam-f img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.sam-f figcaption{position:absolute;left:12px;top:12px;padding:4px 10px;background:var(--bg);font:600 var(--fs-xs)/1.4 var(--f-text);letter-spacing:.14em}
+.sam-f.f25{left:0;top:4%;rotate:-5deg}
+.sam-f.f26{right:0;bottom:4%;rotate:4deg}
+.sam-preu{position:absolute;right:-8px;bottom:-24px;z-index:2;width:clamp(96px,9vw,128px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:var(--bg);border:2px solid var(--text);font:600 var(--fs-xl)/1 var(--f-title);rotate:-8deg}
+.sam-txt h2{font-size:var(--fs-3xl);line-height:1.02;text-transform:uppercase}
+.sam-txt h2 em{font-style:italic;color:var(--accent-text)}
+.sam-txt>p{margin-top:var(--s3);max-width:44ch;font-size:var(--fs-lg);font-weight:600}
+.preu{margin-top:var(--s4);display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap}
+.preu strong{font:600 clamp(2.75rem, 1.8rem + 3vw, 4.5rem)/1 var(--f-title);color:var(--accent-text)}
+.preu span{font-size:var(--fs-sm);font-weight:600}
+.sam-txt .accions{margin-top:var(--s4)}
+.btn-fosc{background:var(--text);color:var(--bg)}
+.btn-fosc:hover{background:#000}
+.sam-txt p.talla{margin-top:var(--s3);font:italic 600 var(--fs-lg)/1.4 var(--f-title)}
+.sam-txt p.avis-copiat{margin-top:var(--s1);font-size:var(--fs-sm)}
+@media (max-width:860px){ .sam-grid{grid-template-columns:1fr;gap:var(--s6)} .sam-fotos{width:min(86%,380px)} }
+
+/* ---------- Instagram (com a Gula) ---------- */
+.ig-sec{background:var(--surface)}
+.posts{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s2);list-style:none;margin:0;padding:0}
+.post a{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.post img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.post a:hover img{transform:scale(1.04)}
+.post .ig{position:absolute;top:12px;right:12px;width:28px;height:28px;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4))}
+/* Separador amb els banyistes: omple el buit de sota el feed i tanca la secció (alçada segons la pantalla) */
+.separador{display:flex;align-items:flex-end;gap:var(--s3);margin-top:var(--s5)}
+.separador span{flex:1;height:1px;background:var(--line);margin-bottom:var(--s1)}
+.separador img{width:auto;height:clamp(80px, calc(var(--cab) - 2 * var(--sec) - 480px), 160px)}
+@media (max-width:900px){ .separador img{height:112px} }
+@media (max-width:900px){
+  .posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none}
+  .posts::-webkit-scrollbar{display:none}
+  .post{flex:0 0 min(60vw,280px);scroll-snap-align:start}
+}
+
+/* ---------- Preguntes: títol a l'esquerra, acordió a la dreta ---------- */
+.faq{background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:center}
+.cap-faq h2{font-size:var(--fs-2xl);max-width:16ch}
+.cap-faq p{margin-top:var(--s2);color:var(--text-2);font-size:var(--fs-lg)}
+.cap-faq .btn{margin-top:var(--s4)}
+.cap-faq{display:flex;flex-direction:column;align-items:flex-start}
+.faq-il{margin-top:var(--s5);width:auto;height:clamp(120px, calc(var(--cab) - 2 * var(--sec) - 360px), 240px)}
+@media (max-width:860px){ .faq-il{display:none} }
+.faq-llista{border-top:1px solid var(--line)}
+.faq-llista details{border-bottom:1px solid var(--line)}
+.faq-llista summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:56px;padding:var(--s2) 0;cursor:pointer;list-style:none;font:600 var(--fs-lg)/1.3 var(--f-title)}
+.faq-llista summary::-webkit-details-marker{display:none}
+.faq-llista summary::after{content:"+";flex:none;font:400 1.5rem/1 var(--f-text);transition:transform .2s}
+.faq-llista details[open] summary::after{transform:rotate(45deg)}
+.faq-llista details p{padding:0 0 var(--s3);max-width:60ch;color:var(--text-2)}
+@media (max-width:860px){ .faq-grid{grid-template-columns:minmax(0,1fr);gap:var(--s4)} }
+
+/* ---------- Com arribar: fosca, dades a l'esquerra i rosa dels vents a la dreta ---------- */
+.arribar{background:var(--surface);color:var(--text)}   /* sense el negre: la web només fa servir sorra, fusta i taronja */
+.arribar .eyebrow{color:var(--text-2)}
+.arribar .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s6);align-items:center}
+.arribar h2{font-size:var(--fs-2xl);max-width:18ch}
+.dades{margin-top:var(--s4);display:grid;gap:var(--s2)}
+.dada{display:grid;gap:4px;padding-top:var(--s2);border-top:1px solid var(--line)}
+.dada b{font-size:var(--fs-xs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
+.dada a,.dada span{font-size:var(--fs-lg);text-decoration:none}
+.dada a{padding-block:12px}
+.dada a:hover{text-decoration:underline;text-underline-offset:4px}
+.dada .tel{font:600 var(--fs-xl)/1.2 var(--f-title)}
+.rosa{display:grid;justify-items:center;gap:var(--s2);text-decoration:none;color:var(--text)}
+.rosa svg{width:min(100%,440px);max-height:calc(var(--cab) - 2 * var(--sec) - 48px);height:auto;overflow:visible}
+/* Agulla: gira sobre el centre de la rosa (200,200 del viewBox) */
+.rosa .agulla{transform-box:view-box;transform-origin:200px 200px;transition:transform .9s cubic-bezier(.34,1.56,.64,1)}
+.rosa:hover .agulla,.rosa:focus-visible .agulla{transform:rotate(-38deg)}
+.rosa.is-visible .agulla{animation:busca-nord 2s cubic-bezier(.25,.8,.3,1)}
+@keyframes busca-nord{0%{transform:rotate(-200deg)}70%{transform:rotate(14deg)}85%{transform:rotate(-5deg)}100%{transform:rotate(0)}}
+.rosa .vent{font:600 10px var(--f-text);letter-spacing:.16em;text-transform:uppercase;fill:var(--text-2)}
+.rosa .vent.nord{fill:var(--accent-text);font-size:12px}
+.rosa .cta{font:600 var(--fs-sm)/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);padding-block:12px}
+.rosa:hover .cta{text-decoration:underline;text-underline-offset:5px}
+@media (max-width:860px){ .arribar .wrap{grid-template-columns:1fr} .rosa{justify-self:center} .rosa svg{width:min(100%,150px);max-height:none} .arribar .wrap{gap:var(--s3)} }
+
+/* ---------- Peu ---------- */
+.peu-web{background:var(--bg);border-top:1px solid var(--line);padding-block:var(--s6) var(--s4);font-size:var(--fs-sm)}
+.peu-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s4)}
+.peu-web .brand{color:var(--text)}
+.peu-web .brand img{width:48px;height:52px}
+.peu-web h3{font:600 var(--fs-xs)/1.4 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);margin-bottom:var(--s2)}
+.peu-web ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.peu-web li a{display:inline-block;padding-block:12px}
+.peu-web a{text-decoration:none}
+.peu-web a:hover{text-decoration:underline;text-underline-offset:3px}
+.peu-adr{margin-top:var(--s2);color:var(--text-2);max-width:32ch}
+.peu-baix{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);color:var(--text-2)}
+@media (max-width:860px){ .peu-grid{grid-template-columns:1fr 1fr} .peu-marca{grid-column:1/-1} }
+
+/* ---------- Aparició suau en entrar a la pantalla ---------- */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.vist{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){ .js .rv{opacity:1;transform:none} }
+
+/* ---------- Pàgina de la carta en text ---------- */
+.carta-pag{padding-top:calc(var(--nav-h) + var(--s6))}
+.carta-pag h1{font-size:var(--fs-3xl);max-width:20ch}
+.carta-seccions{columns:2;column-gap:var(--s6)}
+.carta-sec{break-inside:avoid;margin-bottom:var(--s5)}
+.carta-sec h2{font-size:var(--fs-xl);padding-bottom:var(--s1);border-bottom:2px solid var(--text)}
+.carta-sec ul{list-style:none;margin:0;padding:0}
+.carta-sec li{padding:12px 0;border-bottom:1px solid var(--line)}
+.carta-sec .carta-nota{margin-top:var(--s1);color:var(--accent-text);font-size:var(--fs-sm);font-weight:600}
+.carta-sec p.vins{margin-top:var(--s2);color:var(--text-2)}
+.carta-peu{margin-top:var(--s4);color:var(--text-2);font-size:var(--fs-sm)}
+@media (max-width:760px){ .carta-seccions{columns:1} }
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Restaurant",
+   "@id": "https://www.xiringuitolasal.com/#restaurant",
+   "name": "Xiringuito la Sal",
+   "alternateName": [
+    "La Sal Es Xiringuito Ses Oliveres",
+    "Xiri la Sal"
+   ],
+   "description": "Xiringuito a la platja de Ses Oliveres, Cadaqués: paella, peix fresc i terrassa davant la badia. De març a octubre. Reserves: +34 872 20 40 41",
+   "url": "https://www.xiringuitolasal.com/",
+   "telephone": "+34872204041",
+   "image": [
+    "https://www.xiringuitolasal.com/assets/img/hero-2400.webp",
+    "https://www.xiringuitolasal.com/assets/logo/og-terrassa-1200x630.jpg"
+   ],
+   "logo": "https://www.xiringuitolasal.com/assets/logo/favicon-512.png",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avinguda Víctor Rahola, 25",
+    "addressLocality": "Cadaqués",
+    "postalCode": "17488",
+    "addressRegion": "Girona",
+    "addressCountry": "ES"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.2857466,
+    "longitude": 3.2851119
+   },
+   "hasMap": "https://maps.app.goo.gl/VqkFJobXDxhRsfKD7",
+   "servesCuisine": [
+    "Mediterrània",
+    "Peix i marisc",
+    "Arrossos",
+    "Tapes"
+   ],
+   "priceRange": "€€",
+   "acceptsReservations": true,
+   "hasMenu": "https://www.xiringuitolasal.com/carta/#menu",
+   "sameAs": [
+    "https://www.instagram.com/xiringuitolasal/",
+    "https://www.tripadvisor.es/Restaurant_Review-g580326-d12834000-Reviews-Xiringuito_La_Sal-Cadaques_Costa_Brava_Province_of_Girona_Catalonia.html"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.xiringuitolasal.com/#web",
+   "name": "Xiringuito la Sal",
+   "url": "https://www.xiringuitolasal.com/",
+   "inLanguage": [
+    "ca",
+    "es",
+    "fr",
+    "en"
+   ]
+  },
+  {
+   "@type": "Menu",
+   "@id": "https://www.xiringuitolasal.com/carta/#menu",
+   "name": "La carta de Xiringuito la Sal",
+   "inLanguage": "ca",
+   "url": "https://www.xiringuitolasal.com/carta/",
+   "hasMenuSection": [
+    {
+     "@type": "MenuSection",
+     "name": "Per picar",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Les anxoves de l'Eni"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pernil ibèric, 100 g"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Seitons amb taronja i aigua d'olives"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Pa de coca amb tomàquet"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Fregits per picar",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Croquetes del dia"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Peixet fregit"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Patates braves"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Calamars a l'andalusa amb all i oli blanc i negre"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Bunyol de bacallà amb sobrassada i mel trufada"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "El nostre turbot fregit"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Amanides fresques",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Amanida de tomàquet i burrata amb alfàbrega i fonoll"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tàrtar de salmó marinat a casa amb textures de carbassó, anet i mató"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Salmorejo amb tomàquet deshidratat, formatge blau, tomàquets cirerol i crostons de pa"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Empedrat de mongetes, llom de tonyina Bluefin, ou dur i piparres"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Amanida d'enciam i ceba tendre amb olives negres, pebrot vermell, anxoves i pa fregit"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Carpaccio de gamba amb vinagreta de mango, anacards i brots frescos"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "La clova",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Musclos amb salsa thai o al vapor"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Escopinyes amb salsa verda o al vapor"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Cloïsses amb salsa verda o al vapor"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Ceviches i tiradits",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Ceviche de la casa"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tiradito del dia"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Arrossos i peix",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Arròs melós de sípia i gamba vermella"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Arròs de ceps i costelló duroc a baixa temperatura"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Els nostres peixos, sempre frescos: a la donostiarra, a l'allet o a la planxa, amb patates panaderes i verdures de temporada"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Brioix i burger",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Brioix amb melós de vedella, burrata, ceba encurtida, ruca i maionesa sriracha, amb patates fregides"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "La burger del Xiri: vaca vella amb formatge, ou fregit, maionesa de kimchi i ruca"
+      }
+     ]
+    },
+    {
+     "@type": "MenuSection",
+     "name": "Postres",
+     "hasMenuItem": [
+      {
+       "@type": "MenuItem",
+       "name": "Crema de llimona amb crumble de iogurt, melmelada de fruits vermells, gerds i sorbet de llima"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Coulant de xocolata amb gelat d'avellana i avellanes garrapinyades"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Cheesecake de vainilla, teules de xocolata blanca i festucs amb gelatina de moscatell"
+      },
+      {
+       "@type": "MenuItem",
+       "name": "Tarta tatin amb nata muntada i pomes àcides"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">Salta al contingut</a>
+
+<header class="nav solid" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="../#xiringuito" aria-label="Xiringuito la Sal">
+      <img class="logo-blanc" src="../assets/logo/logo-blanc-320.webp" alt="" width="292" height="320">
+      <img class="logo-color" src="../assets/logo/logo-taronja-160.webp" alt="" width="146" height="160">
+      <span class="brand-nom">Xiringuito la Sal</span>
+    </a>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
+      <a href="./" lang="ca" hreflang="ca" aria-current="page"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#FCDD09"/><path d="M0 3.3h30M0 7.8h30M0 12.2h30M0 16.7h30" stroke="#DA121A" stroke-width="2.2"/></svg><span class="visually-hidden">Català</span></a>
+      <a href="../es/carta/" lang="es" hreflang="es"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg><span class="visually-hidden">Español</span></a>
+      <a href="../fr/carte/" lang="fr" hreflang="fr"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#ED2939"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#002395"/></svg><span class="visually-hidden">Français</span></a>
+      <a href="../en/menu/" lang="en" hreflang="en"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.4"/></svg><span class="visually-hidden">English</span></a>
+    </div>
+    <a class="nav-tel" href="tel:+34872204041" aria-label="Truca per reservar: 872 20 40 41" data-i18n-aria="nav_tel_aria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+    <button class="hamb" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú" data-i18n-aria="menu_aria"><span></span><span></span><span></span></button>
+    <div class="menu" id="menu">
+    <nav aria-label="Principal" data-i18n-aria="nav_label">
+      <ul class="nav-links">
+        <li><a href="../#xiringuito" data-i18n="nav_xiri">El Xiringuito</a></li>
+        <li><a href="../#carta" data-i18n="nav_carta">La carta</a></li>
+        <li><a href="../#samarreta" data-i18n="nav_shop">Samarreta</a></li>
+        <li><a href="../#arribar" data-i18n="nav_arribar">Com arribar</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-accent" href="tel:+34872204041" aria-label="Reserva: 872 20 40 41" data-i18n-aria="nav_reserva_aria">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="btn-txt" data-i18n="nav_reserva">Reserva</span>
+    </a>
+    <ul class="menu-xarxes">
+      <li><a href="https://www.instagram.com/xiringuitolasal/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li><a href="https://www.tripadvisor.es/Restaurant_Review-g580326-d12834000-Reviews-Xiringuito_La_Sal-Cadaques_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="7" cy="13" r="3.6"/><circle cx="17" cy="13" r="3.6"/><circle cx="7" cy="13" r="1" fill="currentColor"/><circle cx="17" cy="13" r="1" fill="currentColor"/><path d="M3.5 9.5C6 7.2 9 6 12 6s6 1.2 8.5 3.5M12 9.5l-1.6 2.2M12 9.5l1.6 2.2"/></svg><span>Tripadvisor</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+    </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sec carta-pag" aria-labelledby="carta-h1">
+  <div class="wrap">
+    <div class="cap">
+      <div>
+        <span class="eyebrow">La carta</span>
+        <h1 id="carta-h1">La carta de Xiringuito la Sal</h1>
+        <p>Cuina de mar a la platja de Ses Oliveres, Cadaqués. Els preus i la carta de vins sencera són al PDF.</p>
+      </div>
+      <div class="cap-accions">
+        <a class="btn btn-accent" href="../assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta>Obrir la carta en PDF<span class="visually-hidden"> (PDF, s'obre en una pestanya nova)</span></a>
+        <a class="btn btn-line" href="tel:+34872204041">872 20 40 41</a>
+      </div>
+    </div>
+    <div class="carta-seccions">
+      <section class="carta-sec" aria-labelledby="c-picar"><h2 id="c-picar">Per picar</h2><ul><li>Les anxoves de l'Eni</li><li>Pernil ibèric, 100 g</li><li>Seitons amb taronja i aigua d'olives</li><li>Pa de coca amb tomàquet</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-fregits"><h2 id="c-fregits">Fregits per picar</h2><ul><li>Croquetes del dia</li><li>Peixet fregit</li><li>Patates braves</li><li>Calamars a l'andalusa amb all i oli blanc i negre</li><li>Bunyol de bacallà amb sobrassada i mel trufada</li><li>El nostre turbot fregit</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-amanides"><h2 id="c-amanides">Amanides fresques</h2><ul><li>Amanida de tomàquet i burrata amb alfàbrega i fonoll</li><li>Tàrtar de salmó marinat a casa amb textures de carbassó, anet i mató</li><li>Salmorejo amb tomàquet deshidratat, formatge blau, tomàquets cirerol i crostons de pa</li><li>Empedrat de mongetes, llom de tonyina Bluefin, ou dur i piparres</li><li>Amanida d'enciam i ceba tendre amb olives negres, pebrot vermell, anxoves i pa fregit</li><li>Carpaccio de gamba amb vinagreta de mango, anacards i brots frescos</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-clova"><h2 id="c-clova">La clova</h2><ul><li>Musclos amb salsa thai o al vapor</li><li>Escopinyes amb salsa verda o al vapor</li><li>Cloïsses amb salsa verda o al vapor</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-ceviches"><h2 id="c-ceviches">Ceviches i tiradits</h2><ul><li>Ceviche de la casa</li><li>Tiradito del dia</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-recomanats"><h2 id="c-recomanats">Arrossos i peix</h2><p class="carta-nota">Arrossos: mínim 2 persones, uns 20 minuts.</p><ul><li>Arròs melós de sípia i gamba vermella</li><li>Arròs de ceps i costelló duroc a baixa temperatura</li><li>Els nostres peixos, sempre frescos: a la donostiarra, a l'allet o a la planxa, amb patates panaderes i verdures de temporada</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-brioix"><h2 id="c-brioix">Brioix i burger</h2><ul><li>Brioix amb melós de vedella, burrata, ceba encurtida, ruca i maionesa sriracha, amb patates fregides</li><li>La burger del Xiri: vaca vella amb formatge, ou fregit, maionesa de kimchi i ruca</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-postres"><h2 id="c-postres">Postres</h2><ul><li>Crema de llimona amb crumble de iogurt, melmelada de fruits vermells, gerds i sorbet de llima</li><li>Coulant de xocolata amb gelat d'avellana i avellanes garrapinyades</li><li>Cheesecake de vainilla, teules de xocolata blanca i festucs amb gelatina de moscatell</li><li>Tarta tatin amb nata muntada i pomes àcides</li></ul></section>
+      <section class="carta-sec" aria-labelledby="c-vins"><h2 id="c-vins">Vins i escumosos</h2><p class="vins">Escumosos, blancs, rosats, negres i dolços, amb molts vins de l'Empordà i una bona part de naturals, ecològics i biodinàmics. Pregunta pels vins fora de carta.</p></section>
+    </div>
+    <p class="carta-peu">Si tens alguna al·lèrgia o intolerància alimentària, digues-ho al nostre personal.</p>
+    <p><a class="link" href="../">← Tornar a l'inici</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="peu-web">
+  <div class="wrap">
+    <div class="peu-grid">
+      <div class="peu-marca">
+        <a class="brand" href="../#xiringuito" aria-label="Xiringuito la Sal"><img src="../assets/logo/logo-taronja-160.webp" alt="" width="146" height="160"><span class="brand-nom">Xiringuito la Sal</span></a>
+        <p class="peu-adr">Platja de Ses Oliveres · Avinguda Víctor Rahola, 25 · 17488 Cadaqués, Girona</p>
+      </div>
+      <div>
+        <h3 data-i18n="foot_contacte">Contacte</h3>
+        <ul>
+          <li><a href="tel:+34872204041">+34 872 20 40 41</a></li>
+          <li><a href="https://maps.app.goo.gl/VqkFJobXDxhRsfKD7" target="_blank" rel="noopener">Google Maps<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="arr_horari">Horari</h3>
+        <ul>
+          <li data-i18n="foot_horari1">Segons la temporada</li>
+          <li data-i18n="foot_horari2">De primavera a la tardor</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="foot_segueix">Segueix-nos</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/xiringuitolasal/" target="_blank" rel="noopener">Instagram<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+          <li><a href="https://www.tripadvisor.es/Restaurant_Review-g580326-d12834000-Reviews-Xiringuito_La_Sal-Cadaques_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener">Tripadvisor<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Pendent: enllaços a avís legal, privacitat i cookies quan els tinguem -->
+    <div class="peu-baix"><span>© 2026 Xiringuito la Sal</span><span data-i18n="foot_lloc">Ses Oliveres · Cadaqués</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Idiomes ---------- */
+  var T = {};  /* textos ja aplicats a cada idioma per src/build.py */
+  var PDF = {caes:'../assets/carta/carta-ca-es.pdf', fren:'../assets/carta/carta-fr-en.pdf'};
+
+  function setLang(lang){
+    var d = T[lang]; if(!d) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(d[k] !== undefined) el.textContent = d[k]; });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){ var k = el.getAttribute('data-i18n-alt'); if(d[k] !== undefined) el.alt = d[k]; });
+    document.querySelectorAll('[data-i18n-msg]').forEach(function(el){ var k = el.getAttribute('data-i18n-msg'); if(d[k] !== undefined) el.setAttribute('data-msg', d[k]); });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){ var k = el.getAttribute('data-i18n-aria'); if(d[k] !== undefined) el.setAttribute('aria-label', d[k]); });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    // La carta s'obre en l'idioma de la pàgina; el segon botó dona l'altre PDF
+    var fr = lang === 'fr' || lang === 'en';
+    document.querySelectorAll('[data-carta]').forEach(function(a){ a.href = fr ? PDF.fren : PDF.caes; });
+    document.querySelectorAll('[data-carta-altra]').forEach(function(a){ a.href = fr ? PDF.caes : PDF.fren; });
+    document.documentElement.lang = lang;
+    document.title = d.page_title;
+    document.querySelector('meta[name="description"]').content = d.page_desc;
+    try{ localStorage.setItem('xiri-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var start = new URLSearchParams(location.search).get('lang');
+  if(!T[start]){ try{ start = localStorage.getItem('xiri-lang'); }catch(e){} }
+  if(!T[start]){ start = (navigator.language || 'ca').slice(0,2).toLowerCase(); }
+  if(T[start] && start !== 'ca') setLang(start);
+
+  /* ---------- Idioma ----------
+     Primera visita de la sessió: si el navegador parla un altre idioma de la web, s'obre aquesta mateixa pàgina en el seu idioma
+     (altres idiomes, en anglès). Si la persona tria un idioma, es respecta sempre. Els cercadors no es redirigeixen.
+     En canviar d'idioma, la pàgina nova s'obre al mateix punt on era (no torna a dalt). */
+  var IDIOMES = ['ca', 'es', 'fr', 'en'];
+  function enllacIdioma(l){ return document.querySelector('.lang a[hreflang="' + l + '"]'); }
+  (function(){
+    try{
+      if(/bot|crawl|spider|slurp|google|bing|yandex|lighthouse|headless/i.test(navigator.userAgent)) return;
+      if(localStorage.getItem('xiri-lang') || sessionStorage.getItem('xiri-auto')) return;
+      sessionStorage.setItem('xiri-auto', '1');
+      var pref = (navigator.languages || [navigator.language || '']).map(function(l){ return String(l).slice(0, 2).toLowerCase(); });
+      var vol = pref.filter(function(l){ return IDIOMES.indexOf(l) > -1; })[0] || 'en';
+      var a = enllacIdioma(vol);
+      if(vol !== document.documentElement.lang && a) location.replace(a.href);
+    }catch(e){}
+  })();
+  document.querySelectorAll('.lang a').forEach(function(a){
+    a.addEventListener('click', function(){
+      try{
+        localStorage.setItem('xiri-lang', a.getAttribute('hreflang'));
+        var navH = document.getElementById('nav').offsetHeight, actual = null;
+        document.querySelectorAll('main > section, main > .franja').forEach(function(sec){ if(sec.id && sec.getBoundingClientRect().top <= navH + 1) actual = sec; });
+        if(actual) sessionStorage.setItem('xiri-pos', JSON.stringify({id: actual.id, dy: window.scrollY - actual.offsetTop}));
+      }catch(e){}
+    });
+  });
+  try{
+    var pos = JSON.parse(sessionStorage.getItem('xiri-pos') || 'null');
+    sessionStorage.removeItem('xiri-pos');
+    var desti = pos && document.getElementById(pos.id);
+    if(desti) window.scrollTo({top: desti.offsetTop + pos.dy, behavior: 'instant'});
+  }catch(e){}
+
+  /* ---------- Carrusel de plats (mòbil i tauleta): punts que diuen quantes fotos hi ha i quina es veu ---------- */
+  document.querySelectorAll('.plats').forEach(function(llista){
+    var items = llista.children, punts = document.createElement('div');
+    punts.className = 'punts'; punts.setAttribute('aria-hidden', 'true');
+    for(var i = 0; i < items.length; i++) punts.appendChild(document.createElement('span'));
+    llista.parentNode.insertBefore(punts, llista.nextSibling);
+    var marca = function(){
+      var n = Math.round(llista.scrollLeft / Math.max(1, llista.clientWidth));
+      for(var j = 0; j < punts.children.length; j++) punts.children[j].classList.toggle('on', j === n);
+    };
+    llista.addEventListener('scroll', function(){ requestAnimationFrame(marca); }, {passive:true});
+    marca();
+  });
+
+  /* ---------- Menú hamburguesa (mòbil i tauleta) ---------- */
+  var navEl = document.getElementById('nav'), hamb = navEl.querySelector('.hamb');
+  function tanca(){ navEl.classList.remove('obert'); hamb.setAttribute('aria-expanded', 'false'); }
+  hamb.addEventListener('click', function(){
+    var obre = !navEl.classList.contains('obert');
+    navEl.classList.toggle('obert', obre); hamb.setAttribute('aria-expanded', String(obre));
+  });
+  navEl.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click', tanca); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navEl.classList.contains('obert')){ tanca(); hamb.focus(); } });
+  matchMedia('(min-width:961px)').addEventListener('change', function(e){ if(e.matches) tanca(); });
+
+  /* ---------- Capçalera: sòlida (transparent només si hi ha portada amb foto); al mòbil s'amaga en baixar ---------- */
+  var nav = document.getElementById('nav'), hero = document.querySelector('.hero');
+  var lastY = window.scrollY, ticking = false, mobil = matchMedia('(max-width:860px)');
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY;
+      nav.classList.toggle('solid', !hero || y > hero.offsetHeight - nav.offsetHeight - 1);
+      if(Math.abs(y - lastY) >= 6){
+        nav.classList.toggle('amagat', mobil.matches && y > lastY && y > nav.offsetHeight * 2 && !nav.classList.contains('obert') && !nav.contains(document.activeElement));
+        lastY = y;
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- Opinions: se'n veuen 3 (2 a la tauleta, 1 al mòbil); les fletxes les fan rotar ---------- */
+  var llista = document.getElementById('ressenyes');
+  if(llista){
+    var items = [].slice.call(llista.children), inici = 0;
+    var mqT = matchMedia('(max-width:1000px)'), mqM = matchMedia('(max-width:640px)');
+    var quantes = function(){ return mqM.matches ? 1 : mqT.matches ? 2 : 3; };
+    var pinta = function(anim){
+      var n = quantes();
+      items.forEach(function(li, i){
+        var pos = (i - inici + items.length) % items.length;
+        li.hidden = pos >= n; li.style.order = pos; li.classList.remove('entra');
+        document.querySelectorAll('.opinions .fletxa').forEach(function(b){ b.hidden = items.length <= n; });
+        if(anim && !li.hidden){ void li.offsetWidth; li.classList.add('entra'); }
+      });
+    };
+    var mou = function(pas){ inici = (inici + pas + items.length) % items.length; pinta(true); };
+    document.querySelector('.opinions .fletxa.prev').addEventListener('click', function(){ mou(-1); });
+    document.querySelector('.opinions .fletxa.next').addEventListener('click', function(){ mou(1); });
+    [mqT, mqM].forEach(function(mq){ mq.addEventListener('change', function(){ pinta(false); }); });
+    pinta(false);
+  }
+
+  /* ---------- Carta: les fletxes passen els plats d'un en un ---------- */
+  var plats = document.querySelector('.plats');
+  if(plats){
+    var pas = function(d){ var c = plats.querySelector('.plat'); if(c) plats.scrollBy({ left: d * (c.getBoundingClientRect().width + 24), behavior: 'smooth' }); };
+    document.querySelector('.plats-ant').addEventListener('click', function(){ pas(-1); });
+    document.querySelector('.plats-seg').addEventListener('click', function(){ pas(1); });
+  }
+
+  /* ---------- Samarreta: missatge de reserva ja escrit (WhatsApp) o copiat (Instagram) ---------- */
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.addEventListener('click', function(){ a.href = 'https://wa.me/' + a.dataset.wa + '?text=' + encodeURIComponent(a.dataset.msg); });
+  });
+  document.querySelectorAll('[data-ig]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var avis = document.querySelector('.avis-copiat');
+      try{ navigator.clipboard.writeText(a.dataset.msg).then(function(){ if(avis) avis.hidden = false; }); }catch(e){}
+    });
+  });
+
+  /* ---------- La rosa busca el nord quan entra a la pantalla ---------- */
+  var rosa = document.querySelector('.rosa');
+  if('IntersectionObserver' in window && rosa){
+    var ior = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ rosa.classList.add('is-visible'); ior.disconnect(); } }, {threshold:.45});
+    ior.observe(rosa);
+  }
+
+  /* ---------- Aparició suau dels blocs ---------- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vist'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('vist'); }); }
+})();
+</script>
+</body>
+</html>

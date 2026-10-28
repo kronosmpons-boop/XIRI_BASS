@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xiringuito la Sal · Peix i arròs a Ses Oliveres, Cadaqués</title>
+<meta name="description" content="Xiringuito la Sal, a la platja de Ses Oliveres, Cadaqués. Peix fresc, arrossos i una terrassa davant la badia. Reserves: +34 872 20 40 41">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF6EF">
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Xiringuito la Sal · Peix i arròs a Ses Oliveres, Cadaqués">
+<meta property="og:description" content="Xiringuito la Sal, a la platja de Ses Oliveres, Cadaqués. Peix fresc, arrossos i una terrassa davant la badia.">
+<meta property="og:image" content="assets/logo/og-terrassa-1200x630.jpg">
+<link rel="icon" href="assets/logo/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/logo/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon-180.png">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-600-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/commissioner-400-latin.woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+/* ------------------------------------------------------------------
+   XIRI LA SAL · versió simple (21-10-2026)
+   Referència del jefe: gammarus.es. Fons llis de sorra, fotos a sang,
+   blocs de text + foto alternats, una sola acció: trucar per reservar.
+   2 famílies (Fraunces títols · Commissioner text), 1 accent (taronja del logo).
+   ------------------------------------------------------------------ */
+:root{
+  --bg:#FBF6EF;            /* sorra: fons de la pàgina */
+  --surface:#F1E7D9;       /* sorra fosca: blocs de text, peu */
+  --text:#1E1B18;          /* carbó */
+  --text-2:#57504A;        /* text secundari */
+  --line:rgba(30,27,24,.14);
+  --accent:#FF3000;        /* taronja del logo: botons (text carbó a sobre, 4.58:1) */
+  --accent-text:#C42200;   /* taronja per a text petit sobre clar (5.87:1) */
+  --on-photo:#FFFFFF;
+
+  --f-title:'Fraunces', Georgia, 'Times New Roman', serif;
+  --f-text:'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* escala tipogràfica (8 rols) */
+  --fs-xs:.75rem;    /* 12 · etiquetes */
+  --fs-sm:.875rem;   /* 14 · peus, notes */
+  --fs-md:1rem;      /* 16 · text */
+  --fs-lg:1.125rem;  /* 18 · entradeta */
+  --fs-xl:1.375rem;  /* 22 · títol de targeta */
+  --fs-2xl:clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);   /* 28-40 · títol de secció */
+  --fs-3xl:clamp(2.25rem, 1.4rem + 3.2vw, 4rem);     /* 36-64 · títol de portada */
+
+  /* espai (escala de 8) */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px; --s8:128px;
+  --sec:96px;              /* aire de secció: 96 a l'escriptori, 64 al mòbil i en pantalles baixes */
+  --cab:calc(100vh - var(--nav-h));   /* alçada útil sota el menú: cada secció hi cap */
+  --wrap:1200px;
+  --gut:clamp(16px, 4vw, 48px);
+  --nav-h:72px;
+  --radius:4px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font:400 var(--fs-md)/1.65 var(--f-text);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-title);font-weight:600;line-height:1.12;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+p+p{margin-top:var(--s2)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:var(--s2);top:-100px;z-index:100;background:var(--text);color:var(--bg);padding:var(--s1) var(--s2)}
+.skip-link:focus{top:var(--s2)}
+:focus-visible{outline:2px solid var(--accent-text);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.sec{padding-block:var(--sec);min-height:var(--cab);display:flex;flex-direction:column;justify-content:center}
+.sec>.wrap{width:100%}
+@supports (height:100svh){:root{--cab:calc(100svh - var(--nav-h))}}
+@media (max-width:860px), (max-height:820px){:root{--sec:64px}}
+/* Etiqueta de secció: la mateixa paraula que el menú */
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:var(--s2);font-size:var(--fs-xs);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2)}
+.eyebrow::before{content:"";width:28px;height:12px;flex:none;background:url("assets/img/ma.webp") left center/contain no-repeat}
+/* Capçalera de secció: títol a l'esquerra, accions a la dreta (la mateixa a totes) */
+.cap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--s3) var(--s5);margin-bottom:var(--s5)}
+.cap h2{font-size:var(--fs-2xl);max-width:22ch}
+.cap p{margin-top:var(--s2);max-width:52ch;color:var(--text-2);font-size:var(--fs-lg)}
+.cap-accions{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}
+/* Dos botons junts: sempre el mateix ample */
+.cap-accions:has(.btn + .btn){display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
+@media (max-width:560px){ .cap-accions{width:100%;flex-wrap:nowrap} .cap-accions .btn{flex:1 1 0;padding-inline:12px;font-size:var(--fs-xs);letter-spacing:.06em} }
+@media (max-height:820px) and (min-width:861px){ .cap{margin-bottom:var(--s4)} }
+
+/* ---------- Botons: un sol component, dues variants ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);min-height:48px;padding:12px 28px;border:1px solid transparent;border-radius:var(--radius);
+  font:600 var(--fs-sm)/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-accent{background:var(--accent);color:var(--text)}
+.btn-accent:hover{background:#E62B00}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
+.on-photo .btn-line{color:var(--on-photo)}
+.on-photo .btn-line:hover{background:var(--on-photo);color:var(--text);border-color:var(--on-photo)}
+.link{display:inline-block;padding-block:12px;font-weight:600;color:var(--accent-text);text-decoration:underline;text-underline-offset:4px}
+.link:hover{color:var(--text)}
+
+/* ---------- Capçalera ---------- */
+/* Menú flotant: una barra arrodonida separada de les vores, per sobre de la foto */
+.nav{position:fixed;top:12px;left:var(--gut);right:var(--gut);max-width:calc(var(--wrap) - 2 * var(--gut));margin-inline:auto;z-index:50;color:var(--text);
+  background:rgba(251,246,239,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:14px;box-shadow:0 10px 30px -14px rgba(30,27,24,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.nav-in{height:var(--nav-h);display:flex;align-items:center;gap:var(--s4);padding-inline:var(--s3)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto;padding-right:var(--s3)}
+.brand{min-height:44px}
+.brand img{width:40px;height:44px;object-fit:contain}
+.brand .logo-color{display:none}
+.brand-nom{font:600 var(--fs-sm)/1.1 var(--f-text);letter-spacing:.08em;text-transform:uppercase}   /* com els enllaços del menú */
+.nav .brand-nom{display:none}   /* al menú flotant n'hi ha prou amb el logo: el nom ja és a tot arreu */
+.nav-links{display:flex;gap:var(--s3);list-style:none;margin:0;padding:0}
+.nav-links a,.brand-nom{white-space:nowrap}
+.nav-links a{font-size:var(--fs-sm);font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding-block:var(--s1);border-bottom:1px solid transparent}
+.nav-links a:hover{border-bottom-color:var(--accent)}
+.nav-links a:focus:not(:focus-visible){border-bottom-color:transparent}
+.lang{display:flex;gap:2px}
+.lang button,.lang a{min-width:44px;min-height:44px;padding:0 6px;border:0;background:none;color:inherit;font:600 var(--fs-xs)/1 var(--f-text);letter-spacing:.08em;cursor:pointer;opacity:.75;border-bottom:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.lang [aria-pressed="true"],.lang [aria-current="page"]{opacity:1;border-bottom:2px solid var(--accent)}
+.lang svg{width:24px;height:16px;border-radius:2px;box-shadow:0 0 0 1px rgba(30,27,24,.15)}
+.lang a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:12px 20px}
+.nav.obert{background:var(--bg)}
+.nav.solid .logo-blanc,.nav.obert .logo-blanc{display:none}
+.nav.solid .logo-color,.nav.obert .logo-color{display:block}
+.nav.amagat{transform:translateY(calc(-100% - 16px))}
+/* Escriptori: el contenidor del menú no existeix (els fills van en línia a la capçalera) */
+.menu{display:contents}
+.menu-xarxes{display:none}
+.hamb{display:none}
+/* Ordre a l'escriptori: seccions, idiomes, reserva. Al mòbil els idiomes queden fora del menú, sempre a la vista */
+.nav-in>nav,.menu>nav{order:1}
+.nav-in>.lang{order:2}
+.menu>.btn{order:3}
+.hamb{order:4}
+.nav-tel{display:none}
+@media (max-width:960px){
+  .nav-in{gap:var(--s1);padding-inline:var(--s2)}
+  .brand{margin-right:auto}
+  .brand,.nav-tel,.hamb{flex:none}
+  .brand{min-width:44px}
+  .nav-tel{order:3;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--text)}
+  .nav-tel svg{width:20px;height:20px}
+  .nav-in>.lang button,.nav-in>.lang a{min-width:40px}
+  .lang{flex:none}
+  .hamb{display:grid;place-content:center;gap:6px;width:44px;height:44px;margin-right:-10px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+  .hamb span{display:block;width:24px;height:2px;background:currentColor;transition:transform .3s,opacity .2s}
+  .nav.obert .hamb span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .nav.obert .hamb span:nth-child(2){opacity:0}
+  .nav.obert .hamb span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .menu{position:fixed;top:calc(var(--nav-h) + 20px);left:var(--gut);right:var(--gut);border-radius:14px;display:none;flex-direction:column;gap:var(--s4);max-height:calc(100vh - var(--nav-h));overflow-y:auto;
+    padding:var(--s4) var(--s3) var(--s5);background:var(--bg);color:var(--text);box-shadow:0 12px 24px -12px rgba(30,27,24,.25)}
+  .nav.obert .menu{display:flex}
+  .nav-links{flex-direction:column;gap:0}
+  .nav-links a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font:600 var(--fs-xl)/1.2 var(--f-title);letter-spacing:0;text-transform:none}
+  .nav-links a:hover{border-bottom-color:var(--line);color:var(--accent-text)}
+  .nav-in>.lang{gap:0}
+  .menu .btn{width:100%;min-height:52px}
+  .menu-xarxes{order:4;display:flex;justify-content:center;gap:var(--s5);list-style:none;margin:0;padding:0}
+  .menu-xarxes a{display:inline-flex;align-items:center;gap:var(--s1);min-height:44px;text-decoration:none;font-weight:600;font-size:var(--fs-sm)}
+  .menu-xarxes a:hover{color:var(--accent-text)}
+  .menu-xarxes svg{width:22px;height:22px}
+  .nav.obert .nav-tel{visibility:hidden}
+  .menu .btn .btn-txt{display:inline}
+}
+@media (max-width:560px){
+  .brand-nom{display:none}
+  .nav-in{gap:4px;padding-inline:12px}
+  .nav-in>.lang button,.nav-in>.lang a{min-width:34px;padding:0 3px}
+  .hamb{margin-right:0}
+}
+
+/* ---------- Portada: foto a sang, logo i títol al centre ---------- */
+
+/* Franja de reserva just sota la portada (com el «Book here» de Gammarus) */
+.franja{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--s1) var(--s3);min-height:72px;padding:var(--s2) var(--gut);background:var(--accent);color:var(--text);text-decoration:none;text-align:center}
+.franja span{font-size:var(--fs-sm);font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.franja strong{font:600 var(--fs-xl)/1 var(--f-title);letter-spacing:.02em}
+.franja svg{width:22px;height:22px}
+.franja-num{display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
+@media (max-width:560px){ .franja{flex-direction:column;gap:4px;padding:var(--s2) var(--gut)} .franja span{font-size:var(--fs-xs);letter-spacing:.12em} }
+.franja:hover strong{text-decoration:underline;text-underline-offset:5px}
+
+/* ---------- Blocs de text + foto a sang (patró de Gammarus) ---------- */
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:var(--cab)}
+/* el text, centrat dins la seva columna: el mateix aire a esquerra i dreta */
+.split-txt{display:flex;flex-direction:column;justify-content:center;padding:var(--sec) clamp(24px, 6vw, 96px)}
+.split-txt>*{width:100%;max-width:460px;margin-inline:auto}
+.split-txt h2{font-size:var(--fs-2xl);max-width:18ch}
+.split-txt h1{font-size:var(--fs-2xl);max-width:18ch}
+/* Sense portada: la primera secció comença sota el menú */
+main > .split:first-child{margin-top:0}
+main > .split:first-child .split-txt{padding-top:calc(var(--nav-h) + 12px + var(--sec))}
+.split-txt p{margin-top:var(--s3);max-width:44ch;color:var(--text-2);font-size:var(--fs-lg)}
+.split-txt p+p{margin-top:var(--s2)}
+.split-txt .accions{margin-top:var(--s4);display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.split-img{position:relative;min-height:320px}
+.split-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split.fosc .split-txt{background:var(--surface)}
+@media (max-width:860px){
+  .split.primer .split-img{margin-top:0}
+  main > .split:first-child .split-txt{padding-top:var(--s6)}
+  .split{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;min-height:var(--cab)}
+  .split-img{order:-1;aspect-ratio:16/10;min-height:0}
+  .split-txt{padding:var(--s6) var(--gut)}
+}
+
+
+/* ---------- L'ambient: graella de fotos amb gent (5 fotos, una d'ample) ---------- */
+.ambient-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:var(--s2);
+  height:clamp(400px, calc(var(--cab) - 2 * var(--sec) - 240px), 680px);list-style:none;margin:0;padding:0}
+.ambient-grid li{position:relative;overflow:hidden;background:var(--surface)}
+.ambient-grid li.ample{grid-column:span 2}
+.ambient-grid li.alt{grid-row:span 2}
+.ambient-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.ambient-grid li:hover img{transform:scale(1.04)}
+@media (max-width:860px){
+  .ambient-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:180px;height:auto}
+  .ambient-grid li.alt{grid-row:span 2}
+}
+
+/* ---------- La carta: plats grans en una fila que llisca ---------- */
+.banda{position:relative;display:grid;place-items:center;min-height:min(72vh,640px);padding:var(--sec) var(--gut);text-align:center;color:var(--on-photo);overflow:hidden}
+.banda>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banda::after{content:"";position:absolute;inset:0;background:rgba(20,16,12,.5)}
+.banda-in{position:relative;z-index:1;max-width:720px;display:flex;flex-direction:column;align-items:center}
+.banda h2{font-size:var(--fs-2xl)}
+.banda p{margin-top:var(--s3);font-size:var(--fs-lg)}
+.banda .accions{margin-top:var(--s4);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s2)}
+
+.carta-sec-web{background:var(--surface)}
+/* tres plats a la vista, verticals (4:5) i grans; la resta, amb les fletxes o lliscant */
+.plats{display:flex;gap:var(--s3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;list-style:none;margin:0;padding:0;
+  --ph-max:clamp(300px, calc(var(--cab) - 2 * var(--sec) - 300px), 560px)}
+.plats::-webkit-scrollbar{display:none}
+.plat{flex:0 0 calc((100% - 2 * var(--s3)) / 3);scroll-snap-align:start}
+.plats-peu{display:flex;justify-content:flex-end;gap:var(--s2);margin-top:var(--s3)}
+/* Nom del plat sobre la foto (no suma alçada): etiqueta a dalt, nom a sota, sobre un degradat fosc */
+.plat a{position:relative;display:flex;flex-direction:column;justify-content:flex-end;aspect-ratio:4/5;max-height:var(--ph-max);width:100%;padding:var(--s3);overflow:hidden;color:var(--on-photo);text-decoration:none;background:var(--surface)}
+.plat .ph{position:absolute;inset:0}
+.plat .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,0) 35%,rgba(20,16,12,.72) 100%)}
+.plat img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.plat a:hover img{transform:scale(1.04)}
+.plat h3,.plat small{position:relative;z-index:1}
+.plat h3{font:600 var(--fs-xl)/1.25 var(--f-title);text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.plat small{order:-1;margin-bottom:4px;font-size:var(--fs-xs);font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.plat-nota{display:flex;flex-direction:column;justify-content:center;gap:var(--s1);padding:var(--s3);background:var(--surface)}
+.plat-nota h3{font-size:var(--fs-xl);margin-bottom:var(--s1)}
+.plat-nota p{color:var(--text-2);font-size:var(--fs-sm);line-height:1.5}
+.plat-nota p+p{margin-top:0}
+/* Mòbil: els plats llisquen de costat (com Instagram) i la secció cap en una pantalla */
+@media (max-width:960px){
+  .plats{gap:var(--s2);overscroll-behavior-x:contain}
+  .plat,.plat-nota{flex:0 0 84%}
+  .plat a{max-height:min(62vh,560px)}
+  .plats-peu{display:none}
+}
+/* Punts sota el carrusel: gris = hi ha més fotos; fosc = la que es veu */
+.punts{display:none}
+@media (max-width:960px){
+  .punts{display:flex;justify-content:center;gap:var(--s1);margin-top:var(--s3)}
+  .punts span{width:8px;height:8px;border-radius:50%;background:#CFC6BA;transition:background-color .2s,transform .2s}
+  .punts span.on{background:var(--text-2);transform:scale(1.25)}
+}
+
+/* ---------- Opinions ---------- */
+.opinions{background:var(--bg)}
+.ressenyes{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);list-style:none;margin:0;padding:0}
+.ressenya[hidden]{display:none}
+.ressenyes{padding-top:var(--s2)}
+.ressenya{position:relative;display:flex;flex-direction:column;gap:var(--s2);padding:var(--s5) var(--s4) var(--s4);background:#FFFDF8;
+  box-shadow:0 1px 2px rgba(30,27,24,.08),0 12px 24px -12px rgba(30,27,24,.28);rotate:var(--gir,0deg)}
+.ressenya:nth-child(3n+1){--gir:-1.2deg}
+.ressenya:nth-child(3n+2){--gir:.9deg}
+.ressenya:nth-child(3n){--gir:-.5deg}
+/* Tros de cel·lo: translúcid, una mica tort i amb les puntes estripades */
+.ressenya::before{content:"";position:absolute;top:-14px;left:50%;width:104px;height:30px;translate:-50% 0;rotate:calc(var(--gir,0deg) * -2.5 - 2deg);
+  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 60%),rgba(236,226,200,.72);box-shadow:0 1px 2px rgba(30,27,24,.12);
+  clip-path:polygon(0 4%,4% 0,8% 6%,12% 0,88% 0,92% 5%,96% 0,100% 6%,100% 94%,96% 100%,92% 95%,88% 100%,12% 100%,8% 94%,4% 100%,0 95%)}
+.ressenya .estrelles{color:var(--accent-text);letter-spacing:.12em;font-size:var(--fs-md)}
+.ressenya blockquote{margin:0;flex:1;font:600 var(--fs-lg)/1.5 var(--f-title)}
+.ressenya footer{font-size:var(--fs-sm);color:var(--text-2)}
+.ressenya footer b{color:var(--text);font-weight:600}
+.ressenya .trad{font-style:italic}
+.ressenya.entra{animation:entra .45s ease both}
+@keyframes entra{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+.opinions-peu{margin-top:var(--s4);text-align:right}
+.fletxa{width:48px;height:48px;display:grid;place-items:center;border:1px solid var(--text);border-radius:50%;background:none;color:var(--text);cursor:pointer}
+.fletxa:hover{background:var(--text);color:var(--bg)}
+.fletxa svg{width:20px;height:20px}
+@media (max-width:1000px){ .ressenyes{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .ressenyes{grid-template-columns:1fr} .opinions-peu{text-align:left} }
+
+/* ---------- Samarreta: com a la versió desenfadada (sobre la fusta del xiringuito) ---------- */
+.fusta{background:var(--surface) url("assets/img/fusta.webp") center/cover}
+.sam-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--s6);align-items:center}
+.sam-fotos{position:relative;width:min(100%, calc((var(--cab) - 2 * var(--sec)) * .78));aspect-ratio:4/5;justify-self:center}
+.sam-f{position:absolute;margin:0;width:66%}
+.sam-f img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.sam-f figcaption{position:absolute;left:12px;top:12px;padding:4px 10px;background:var(--bg);font:600 var(--fs-xs)/1.4 var(--f-text);letter-spacing:.14em}
+.sam-f.f25{left:0;top:4%;rotate:-5deg}
+.sam-f.f26{right:0;bottom:4%;rotate:4deg}
+.sam-preu{position:absolute;right:-8px;bottom:-24px;z-index:2;width:clamp(96px,9vw,128px);aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:var(--bg);border:2px solid var(--text);font:600 var(--fs-xl)/1 var(--f-title);rotate:-8deg}
+.sam-txt h2{font-size:var(--fs-3xl);line-height:1.02;text-transform:uppercase}
+.sam-txt h2 em{font-style:italic;color:var(--accent-text)}
+.sam-txt>p{margin-top:var(--s3);max-width:44ch;font-size:var(--fs-lg);font-weight:600}
+.preu{margin-top:var(--s4);display:flex;align-items:baseline;gap:var(--s3);flex-wrap:wrap}
+.preu strong{font:600 clamp(2.75rem, 1.8rem + 3vw, 4.5rem)/1 var(--f-title);color:var(--accent-text)}
+.preu span{font-size:var(--fs-sm);font-weight:600}
+.sam-txt .accions{margin-top:var(--s4)}
+.btn-fosc{background:var(--text);color:var(--bg)}
+.btn-fosc:hover{background:#000}
+.sam-txt p.talla{margin-top:var(--s3);font:italic 600 var(--fs-lg)/1.4 var(--f-title)}
+.sam-txt p.avis-copiat{margin-top:var(--s1);font-size:var(--fs-sm)}
+@media (max-width:860px){ .sam-grid{grid-template-columns:1fr;gap:var(--s6)} .sam-fotos{width:min(86%,380px)} }
+
+/* ---------- Instagram (com a Gula) ---------- */
+.ig-sec{background:var(--surface)}
+.posts{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s2);list-style:none;margin:0;padding:0}
+.post a{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--surface)}
+.post img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.post a:hover img{transform:scale(1.04)}
+.post .ig{position:absolute;top:12px;right:12px;width:28px;height:28px;color:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4))}
+/* Separador amb els banyistes: omple el buit de sota el feed i tanca la secció (alçada segons la pantalla) */
+.separador{display:flex;align-items:flex-end;gap:var(--s3);margin-top:var(--s5)}
+.separador span{flex:1;height:1px;background:var(--line);margin-bottom:var(--s1)}
+.separador img{width:auto;height:clamp(80px, calc(var(--cab) - 2 * var(--sec) - 480px), 160px)}
+@media (max-width:900px){ .separador img{height:112px} }
+@media (max-width:900px){
+  .posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none}
+  .posts::-webkit-scrollbar{display:none}
+  .post{flex:0 0 min(60vw,280px);scroll-snap-align:start}
+}
+
+/* ---------- Preguntes: títol a l'esquerra, acordió a la dreta ---------- */
+.faq{background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:center}
+.cap-faq h2{font-size:var(--fs-2xl);max-width:16ch}
+.cap-faq p{margin-top:var(--s2);color:var(--text-2);font-size:var(--fs-lg)}
+.cap-faq .btn{margin-top:var(--s4)}
+.cap-faq{display:flex;flex-direction:column;align-items:flex-start}
+.faq-il{margin-top:var(--s5);width:auto;height:clamp(120px, calc(var(--cab) - 2 * var(--sec) - 360px), 240px)}
+@media (max-width:860px){ .faq-il{display:none} }
+.faq-llista{border-top:1px solid var(--line)}
+.faq-llista details{border-bottom:1px solid var(--line)}
+.faq-llista summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);min-height:56px;padding:var(--s2) 0;cursor:pointer;list-style:none;font:600 var(--fs-lg)/1.3 var(--f-title)}
+.faq-llista summary::-webkit-details-marker{display:none}
+.faq-llista summary::after{content:"+";flex:none;font:400 1.5rem/1 var(--f-text);transition:transform .2s}
+.faq-llista details[open] summary::after{transform:rotate(45deg)}
+.faq-llista details p{padding:0 0 var(--s3);max-width:60ch;color:var(--text-2)}
+@media (max-width:860px){ .faq-grid{grid-template-columns:minmax(0,1fr);gap:var(--s4)} }
+
+/* ---------- Com arribar: fosca, dades a l'esquerra i rosa dels vents a la dreta ---------- */
+.arribar{background:var(--surface);color:var(--text)}   /* sense el negre: la web només fa servir sorra, fusta i taronja */
+.arribar .eyebrow{color:var(--text-2)}
+.arribar .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s6);align-items:center}
+.arribar h2{font-size:var(--fs-2xl);max-width:18ch}
+.dades{margin-top:var(--s4);display:grid;gap:var(--s2)}
+.dada{display:grid;gap:4px;padding-top:var(--s2);border-top:1px solid var(--line)}
+.dada b{font-size:var(--fs-xs);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
+.dada a,.dada span{font-size:var(--fs-lg);text-decoration:none}
+.dada a{padding-block:12px}
+.dada a:hover{text-decoration:underline;text-underline-offset:4px}
+.dada .tel{font:600 var(--fs-xl)/1.2 var(--f-title)}
+.rosa{display:grid;justify-items:center;gap:var(--s2);text-decoration:none;color:var(--text)}
+.rosa svg{width:min(100%,440px);max-height:calc(var(--cab) - 2 * var(--sec) - 48px);height:auto;overflow:visible}
+/* Agulla: gira sobre el centre de la rosa (200,200 del viewBox) */
+.rosa .agulla{transform-box:view-box;transform-origin:200px 200px;transition:transform .9s cubic-bezier(.34,1.56,.64,1)}
+.rosa:hover .agulla,.rosa:focus-visible .agulla{transform:rotate(-38deg)}
+.rosa.is-visible .agulla{animation:busca-nord 2s cubic-bezier(.25,.8,.3,1)}
+@keyframes busca-nord{0%{transform:rotate(-200deg)}70%{transform:rotate(14deg)}85%{transform:rotate(-5deg)}100%{transform:rotate(0)}}
+.rosa .vent{font:600 10px var(--f-text);letter-spacing:.16em;text-transform:uppercase;fill:var(--text-2)}
+.rosa .vent.nord{fill:var(--accent-text);font-size:12px}
+.rosa .cta{font:600 var(--fs-sm)/1 var(--f-text);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);padding-block:12px}
+.rosa:hover .cta{text-decoration:underline;text-underline-offset:5px}
+@media (max-width:860px){ .arribar .wrap{grid-template-columns:1fr} .rosa{justify-self:center} .rosa svg{width:min(100%,150px);max-height:none} .arribar .wrap{gap:var(--s3)} }
+
+/* ---------- Peu ---------- */
+.peu-web{background:var(--bg);border-top:1px solid var(--line);padding-block:var(--s6) var(--s4);font-size:var(--fs-sm)}
+.peu-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s4)}
+.peu-web .brand{color:var(--text)}
+.peu-web .brand img{width:48px;height:52px}
+.peu-web h3{font:600 var(--fs-xs)/1.4 var(--f-text);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);margin-bottom:var(--s2)}
+.peu-web ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.peu-web li a{display:inline-block;padding-block:12px}
+.peu-web a{text-decoration:none}
+.peu-web a:hover{text-decoration:underline;text-underline-offset:3px}
+.peu-adr{margin-top:var(--s2);color:var(--text-2);max-width:32ch}
+.peu-baix{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);color:var(--text-2)}
+@media (max-width:860px){ .peu-grid{grid-template-columns:1fr 1fr} .peu-marca{grid-column:1/-1} }
+
+/* ---------- Aparició suau en entrar a la pantalla ---------- */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.vist{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){ .js .rv{opacity:1;transform:none} }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Xiringuito la Sal","telephone":"+34872204041","servesCuisine":["Mediterrània","Peix i marisc","Arrossos"],"priceRange":"€€","acceptsReservations":true,
+"address":{"@type":"PostalAddress","streetAddress":"Avinguda Víctor Rahola, 25","addressLocality":"Cadaqués","postalCode":"17488","addressRegion":"Girona","addressCountry":"ES"},
+"hasMap":"https://maps.app.goo.gl/VqkFJobXDxhRsfKD7","sameAs":["https://www.instagram.com/xiringuitolasal/"]}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip">Salta al contingut</a>
+
+<header class="nav solid" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#xiringuito" aria-label="Xiringuito la Sal">
+      <img class="logo-blanc" src="assets/logo/logo-blanc-320.webp" alt="" width="292" height="320">
+      <img class="logo-color" src="assets/logo/logo-taronja-160.webp" alt="" width="146" height="160">
+      <span class="brand-nom">Xiringuito la Sal</span>
+    </a>
+    <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="lang_label">
+      <button type="button" data-lang="ca" lang="ca" aria-pressed="true"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#FCDD09"/><path d="M0 3.3h30M0 7.8h30M0 12.2h30M0 16.7h30" stroke="#DA121A" stroke-width="2.2"/></svg><span class="visually-hidden">Català</span></button>
+      <button type="button" data-lang="es" lang="es" aria-pressed="false"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg><span class="visually-hidden">Español</span></button>
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="false"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#ED2939"/><rect width="20" height="20" fill="#fff"/><rect width="10" height="20" fill="#002395"/></svg><span class="visually-hidden">Français</span></button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0 0l30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0l30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.4"/></svg><span class="visually-hidden">English</span></button>
+    </div>
+    <a class="nav-tel" href="tel:+34872204041" aria-label="Truca per reservar: 872 20 40 41" data-i18n-aria="nav_tel_aria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></a>
+    <button class="hamb" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú" data-i18n-aria="menu_aria"><span></span><span></span><span></span></button>
+    <div class="menu" id="menu">
+    <nav aria-label="Principal" data-i18n-aria="nav_label">
+      <ul class="nav-links">
+        <li><a href="#xiringuito" data-i18n="nav_xiri">El Xiringuito</a></li>
+        <li><a href="#carta" data-i18n="nav_carta">La carta</a></li>
+        <li><a href="#samarreta" data-i18n="nav_shop">Samarreta</a></li>
+        <li><a href="#arribar" data-i18n="nav_arribar">Com arribar</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-accent" href="tel:+34872204041" aria-label="Reserva: 872 20 40 41" data-i18n-aria="nav_reserva_aria">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="btn-txt" data-i18n="nav_reserva">Reserva</span>
+    </a>
+    <ul class="menu-xarxes">
+      <li><a href="https://www.instagram.com/xiringuitolasal/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span>Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li><a href="https://www.tripadvisor.es/Restaurant_Review-g580326-d12834000-Reviews-Xiringuito_La_Sal-Cadaques_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="7" cy="13" r="3.6"/><circle cx="17" cy="13" r="3.6"/><circle cx="7" cy="13" r="1" fill="currentColor"/><circle cx="17" cy="13" r="1" fill="currentColor"/><path d="M3.5 9.5C6 7.2 9 6 12 6s6 1.2 8.5 3.5M12 9.5l-1.6 2.2M12 9.5l1.6 2.2"/></svg><span>Tripadvisor</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+    </ul>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. El Xiringuito: el primer que es veu (sense portada, decisió del jefe 26-10-2026) (només el que sabem del client: la terrassa, l'arbre, la temporada) -->
+<section class="split fosc primer" id="xiringuito" aria-labelledby="xiri-t">
+  <div class="split-txt rv">
+    <span class="eyebrow" data-i18n="ey_xiri">El Xiringuito</span>
+    <h1 id="xiri-t" data-i18n="xiri_h2">Som de l'estiu. La resta és platja</h1>
+    <p data-i18n="xiri_p1">Instal·lats a la platja de Ses Oliveres des de fa temporades, som una terrassa de fusta i vímet construïda al voltant d'un arbre que ja hi era molt abans que nosaltres.</p>
+    <p data-i18n="xiri_p2">Cada temporada tornem i aixequem la terrassa al voltant del mateix arbre. Quan s'acaba l'estiu ho desmuntem tot, i la platja torna a ser platja fins a l'any següent.</p>
+  </div>
+  <div class="split-img"><img src="assets/img/ambient-terrassa.webp" sizes="(max-width:860px) 100vw, 58vw" alt="La terrassa del Xiringuito la Sal plena de gent dinant" data-i18n-alt="xiri_alt" width="1100" height="1375" fetchpriority="high"></div>
+</section>
+
+<!-- Acció principal: reservar per telèfon -->
+<a class="franja" href="tel:+34872204041" id="reserva">
+  <span data-i18n="band_txt">Reserva per telèfon</span>
+  <span class="franja-num"><strong>872 20 40 41</strong><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+</a>
+
+<!-- 2. L'ambient: fotos de la gent i del bon rotllo (fotos del client) -->
+<section class="sec" id="ambient" aria-labelledby="amb-t">
+  <div class="wrap">
+    <div class="cap rv">
+      <div>
+        <span class="eyebrow" data-i18n="ey_amb">L'ambient</span>
+        <h2 id="amb-t" data-i18n="amb_h2">Aquí es ve a passar-ho bé</h2>
+        <p data-i18n="amb_p">Cambrers amb ganes de broma, paelles que surten fumejant i la badia de fons.</p>
+      </div>
+    </div>
+    <ul class="ambient-grid rv">
+      <li class="alt"><img src="assets/img/ambient-cambrer.webp" alt="Un cambrer porta cerveses a la terrassa" data-i18n-alt="amb1_alt" width="800" height="1000" loading="lazy" decoding="async"></li>
+      <li class="ample"><img src="assets/img/ambient-dinar.webp" alt="Amics dinant a la terrassa davant la badia" data-i18n-alt="amb3_alt" width="1200" height="800" loading="lazy" decoding="async"></li>
+      <li class="alt"><img src="assets/img/ambient-llobregant.webp" alt="Un cuiner ensenya un llobregant acabat d'arribar" data-i18n-alt="amb4_alt" width="800" height="1000" loading="lazy" decoding="async"></li>
+      <li><img src="assets/img/ambient-cadires.webp" alt="Dos amics fent el mandra davant el xiringuito" data-i18n-alt="amb2_alt" width="800" height="1000" loading="lazy" decoding="async"></li>
+      <li class=""><img src="assets/img/ambient-paella.webp" alt="Un cambrer serveix una paella a la terrassa" data-i18n-alt="amb5_alt" width="800" height="1000" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3. La carta: un sol botó (la carta en l'idioma de la pàgina) + plats destacats grans -->
+<section class="sec carta-sec-web" id="carta" aria-labelledby="carta-t">
+  <div class="wrap">
+    <div class="cap rv">
+      <div>
+        <span class="eyebrow" data-i18n="ey_carta">La carta</span>
+        <h2 id="carta-t" data-i18n="carta_h2">Dinar davant la badia de Cadaqués</h2>
+        <p data-i18n="carta_p">Paella d'arròs melós, peix del dia, coses per picar i postres.</p>
+      </div>
+      <div class="cap-accions">
+        <a class="btn btn-accent" href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span data-i18n="carta_btn">Veure la carta</span><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a>
+      </div>
+    </div>
+    <ul class="plats">
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-arros.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d1_name">Arròs melós de sípia i gamba vermella</h3><small data-i18n="d1_tag">El que més es demana</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-peix-del-dia.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d4_name">Peix del dia, sempre fresc</h3><small data-i18n="d4_tag">Del dia</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-anxoves.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d2_name">Les anxoves de l'Eni</h3><small data-i18n="d2_tag">Per picar</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-calamars.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d3_name">Calamars a l'andalusa amb all i oli blanc i negre</h3><small data-i18n="d3_tag">Fregits</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-turbot.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d5_name">El nostre turbot fregit</h3><small data-i18n="d5_tag">El clàssic</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-tiradito.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d6_name">Tiradito del dia</h3><small data-i18n="d6_tag">Cru i fresc</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-coulant.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d7_name">Coulant de xocolata amb gelat d'avellana</h3><small data-i18n="d7_tag">Postres</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+      <li class="plat rv"><a href="assets/carta/carta-ca-es.pdf" target="_blank" rel="noopener" data-carta><span class="ph"><img src="assets/img/plat-croquetes.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></span><h3 data-i18n="d8_name">Croquetes del dia</h3><small data-i18n="d8_tag">Per compartir</small><span class="visually-hidden" data-i18n="pdf_nova"> (PDF, s'obre en una pestanya nova)</span></a></li>
+    </ul>
+    <div class="plats-peu">
+      <button class="fletxa plats-ant" type="button" aria-label="Plats anteriors" data-i18n-aria="carta_prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button class="fletxa plats-seg" type="button" aria-label="Més plats" data-i18n-aria="carta_next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Opinions reals: Google (sluurpy.es, 14-15/10/2026) i Tripadvisor FR (19/10/2026). Extractes literals.
+     Cada ressenya és un paper enganxat amb un tros de cel·lo. -->
+<section class="sec opinions" id="opinions" aria-labelledby="rev-t">
+  <div class="wrap">
+    <div class="cap rv">
+      <div>
+        <span class="eyebrow" data-i18n="ey_rev">Opinions</span>
+        <h2 id="rev-t" data-i18n="rev_h2">Què en diuen de nosaltres?</h2>
+      </div>
+      <div class="cap-accions">
+        <button class="fletxa prev" type="button" aria-label="Ressenya anterior" data-i18n-aria="rev_prev" aria-controls="ressenyes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="fletxa next" type="button" aria-label="Ressenya següent" data-i18n-aria="rev_next" aria-controls="ressenyes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <ul class="ressenyes" id="ressenyes" aria-live="polite">
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Menjar boníssim amb unes vistes immillorables. Bon ambient i un servei excel·lent»</blockquote><footer><b>Marian R.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Vam demanar un turbot que era espectacular i en vam aprofitar fins a l'última espina, fregit i cruixent.»</blockquote><footer><b>Terry A.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«[…] vam decidir provar-ho. Gran idea! Vam menjar un arròs de sípia i gambes espectacular!»</blockquote><footer><b>Gerard V.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Vistes privilegiades, producte de qualitat i personal molt atent i simpàtic, amb un punt canalla. […] Un lloc ideal per sopar a la posta de sol.»</blockquote><footer><b>Alex B.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«El gust de l'arròs és de nivell!!! […] Ens ha encantat el lloc, el menjar i el tracte del personal, immillorable.»</blockquote><footer><b>Rocio R.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«I el menjar… més que excel·lent. […] Però la tarta Tatin… la millor que he provat. Servei de 10.»</blockquote><footer><b>M. C.</b> · Google · <span class="trad">traduïda del castellà</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Vam passar una estona molt agradable al restaurant XIRI. El personal és molt acollidor. […] En una terrassa amb vista al mar.»</blockquote><footer><b>Caroline A.</b> · Tripadvisor · <span class="trad">traduïda del francès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Un autèntic oasi de pau, un servei increïble i menjar local de qualitat […] Quina felicitat!»</blockquote><footer><b>juleblanc74</b> · Tripadvisor · <span class="trad">traduïda del francès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★☆</span><span class="visually-hidden" data-i18n="rev_4">4 de 5 estrelles</span><blockquote lang="ca">«Molt ben situat a prop del mar, plats ben amanits i variats, amb producte fresc. El personal és atent.»</blockquote><footer><b>Sebastien V.</b> · Tripadvisor · <span class="trad">traduïda del francès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«El meu restaurant/xiringuito preferit de Cadaqués, sense cap dubte. Personal superamable, les millors vistes i un menjar boníssim.»</blockquote><footer><b>Wolf Allisat</b> · Google · <span class="trad">traduïda de l'anglès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Un sopar fantàstic: personal amable i menjar deliciós! […] No ens va decebre: una vetllada encantadora.»</blockquote><footer><b>Steve E.</b> · Tripadvisor · <span class="trad">traduïda de l'anglès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«Un personal increïble, molt amable i atent […] La qualitat és molt alta i el menjar, molt ben presentat. […] Bo per dinar i també molt romàntic per sopar.»</blockquote><footer><b>Lydia Caldwell</b> · Tripadvisor · <span class="trad">traduïda de l'anglès</span></footer></li>
+      <li class="ressenya" data-r="ca"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="ca">«El menjar és boníssim. Cada mos et farà dir “uau”. Recomano reservar amb temps, perquè normalment és ple.»</blockquote><footer><b>Mama rasta</b> · Google · <span class="trad">traduïda de l'anglès</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Comida buenísima con vistas inmejorables. Buen ambiente y excelente servicio»</blockquote><footer><b>Marian R.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Pedimos un rodaballo que estaba espectacular y aprovechamos hasta la última espina, preparado frito y crujiente.»</blockquote><footer><b>Terry A.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«[…] decidimos probar. Gran idea! Ya que comimos un arroz de sepia y gambas espectacular!»</blockquote><footer><b>Gerard V.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Vistas privilegiadas, producto de calidad y personal muy atento y simpático con un punto canalla. […] Un lugar ideal para cenar al atardecer.»</blockquote><footer><b>Alex B.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«El sabor del arroz es nivel dios!!! […] Nos ha encantado el lugar, la comida y el trato del personal inmejorable.»</blockquote><footer><b>Rocio R.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Y la comida… más que excelente. […] Pero la tarta Tatin… la mejor que he probado. Servicio 10.»</blockquote><footer><b>M. C.</b> · Google</footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Pasamos un rato muy agradable en el restaurante XIRI. El personal es muy acogedor. […] En una terraza con vistas al mar.»</blockquote><footer><b>Caroline A.</b> · Tripadvisor · <span class="trad">traducida del francés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Un auténtico remanso de paz, un servicio increíble y comida local de calidad […] ¡Una felicidad!»</blockquote><footer><b>juleblanc74</b> · Tripadvisor · <span class="trad">traducida del francés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★☆</span><span class="visually-hidden" data-i18n="rev_4">4 de 5 estrelles</span><blockquote lang="es">«Muy bien situado cerca del mar, platos bien sazonados y variados con producto fresco. El personal es atento.»</blockquote><footer><b>Sebastien V.</b> · Tripadvisor · <span class="trad">traducida del francés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Mi restaurante/chiringuito favorito de Cadaqués, sin duda. Personal superamable, las mejores vistas y una comida increíble.»</blockquote><footer><b>Wolf Allisat</b> · Google · <span class="trad">traducida del inglés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«¡Una cena fantástica: personal amable y comida deliciosa! […] No nos decepcionó: una velada preciosa.»</blockquote><footer><b>Steve E.</b> · Tripadvisor · <span class="trad">traducida del inglés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«Un personal increíble, muy amable y atento […] La calidad es muy alta y la comida, muy bien presentada. […] Bueno para comer y también muy romántico para cenar.»</blockquote><footer><b>Lydia Caldwell</b> · Tripadvisor · <span class="trad">traducida del inglés</span></footer></li>
+      <li class="ressenya" data-r="es"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="es">«La comida está buenísima. Cada bocado te hará decir “guau”. Recomiendo reservar con tiempo, porque normalmente está lleno.»</blockquote><footer><b>Mama rasta</b> · Google · <span class="trad">traducida del inglés</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Nous avons passé un très agréable moment au restaurant XIRI. Le personnel est tout à fait accueillant. […] Sur une terrasse vue sur mer.»</blockquote><footer><b>Caroline A.</b> · Tripadvisor</footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Un véritable havre de paix, le service incroyable, et une nourriture locale de qualité […] Le bonheur !»</blockquote><footer><b>juleblanc74</b> · Tripadvisor</footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★☆</span><span class="visually-hidden" data-i18n="rev_4">4 de 5 estrelles</span><blockquote lang="fr">«Idéalement placé à proximité de la mer, plats bien assaisonnés et variés avec des produits frais. Le personnel est attentionné.»</blockquote><footer><b>Sebastien V.</b> · Tripadvisor</footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Une cuisine délicieuse avec une vue imprenable. Bonne ambiance et excellent service»</blockquote><footer><b>Marian R.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Nous avons commandé un turbot spectaculaire, frit et croustillant, et nous en avons profité jusqu'à la dernière arête.»</blockquote><footer><b>Terry A.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«[…] nous avons décidé d'essayer. Excellente idée ! Nous avons mangé un riz à la seiche et aux crevettes spectaculaire !»</blockquote><footer><b>Gerard V.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Une vue privilégiée, des produits de qualité et un personnel très attentionné et sympathique, avec une pointe de malice. […] Un endroit idéal pour dîner au coucher du soleil.»</blockquote><footer><b>Alex B.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Le goût du riz est divin !!! […] Nous avons adoré l'endroit, la cuisine et l'accueil du personnel, impeccable.»</blockquote><footer><b>Rocio R.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Et la cuisine… plus qu'excellente. […] Mais la tarte Tatin… la meilleure que j'aie goûtée. Service 10/10.»</blockquote><footer><b>M. C.</b> · Google · <span class="trad">traduit de l'espagnol</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Mon restaurant/xiringuito préféré à Cadaqués, sans hésiter. Un personnel super sympa, la plus belle vue et une cuisine incroyable.»</blockquote><footer><b>Wolf Allisat</b> · Google · <span class="trad">traduit de l'anglais</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Un dîner fantastique : personnel sympathique et cuisine délicieuse ! […] Nous n'avons pas été déçus : une très belle soirée.»</blockquote><footer><b>Steve E.</b> · Tripadvisor · <span class="trad">traduit de l'anglais</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«Un personnel incroyable, très gentil et attentionné […] La qualité est très élevée et les plats très bien présentés. […] Parfait pour déjeuner et très romantique pour dîner.»</blockquote><footer><b>Lydia Caldwell</b> · Tripadvisor · <span class="trad">traduit de l'anglais</span></footer></li>
+      <li class="ressenya" data-r="fr"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="fr">«La cuisine est délicieuse. Chaque bouchée vous fera dire « waouh ». Je conseille de réserver à l'avance, car c'est souvent complet.»</blockquote><footer><b>Mama rasta</b> · Google · <span class="trad">traduit de l'anglais</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«My favourite restaurant/Xiringito in Cadaques - hands down. Super friendly staff, the best views and amazing food.»</blockquote><footer><b>Wolf Allisat</b> · Google</footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«Fantastic Dinner - friendly staff and delicious food! […] We weren't disappointed - a lovely evening»</blockquote><footer><b>Steve E.</b> · Tripadvisor</footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«Incredible staff, super gentle and sweet […] The quality is very high and the food very well presented. […] Good for lunch and also very romantic for dinner.»</blockquote><footer><b>Lydia Caldwell</b> · Tripadvisor</footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«The food is so tasty. You will go wow with every bite that you take. I recommend to reserve in time as they're normally fully booked.»</blockquote><footer><b>Mama rasta</b> · Google</footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«Delicious food with unbeatable views. Great atmosphere and excellent service»</blockquote><footer><b>Marian R.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«We ordered a turbot that was spectacular, fried and crispy, and we enjoyed it down to the last bone.»</blockquote><footer><b>Terry A.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«[…] we decided to give it a try. Great idea! We had a spectacular cuttlefish and prawn rice!»</blockquote><footer><b>Gerard V.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«Privileged views, quality produce and very attentive, friendly staff with a cheeky touch. […] An ideal place for dinner at sunset.»</blockquote><footer><b>Alex B.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«The rice tastes out of this world!!! […] We loved the place, the food and the staff, who couldn't have been nicer.»</blockquote><footer><b>Rocio R.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«And the food… more than excellent. […] But the tarte Tatin… the best I've ever had. 10/10 service.»</blockquote><footer><b>M. C.</b> · Google · <span class="trad">translated from Spanish</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«We had a very pleasant time at the XIRI restaurant. The staff are really welcoming. […] On a terrace with a sea view.»</blockquote><footer><b>Caroline A.</b> · Tripadvisor · <span class="trad">translated from French</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★★</span><span class="visually-hidden" data-i18n="rev_5">5 de 5 estrelles</span><blockquote lang="en">«A true haven of peace, amazing service and quality local food […] Pure happiness!»</blockquote><footer><b>juleblanc74</b> · Tripadvisor · <span class="trad">translated from French</span></footer></li>
+      <li class="ressenya" data-r="en"><span class="estrelles" aria-hidden="true">★★★★☆</span><span class="visually-hidden" data-i18n="rev_4">4 de 5 estrelles</span><blockquote lang="en">«Ideally located by the sea, well-seasoned, varied dishes with fresh produce. The staff are attentive.»</blockquote><footer><b>Sebastien V.</b> · Tripadvisor · <span class="trad">translated from French</span></footer></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. Instagram: les 5 darreres publicacions (28-10-2026). Per tenir-les sempre al dia a WordPress cal un connector de feed (p. ex. Smash Balloon) amb el compte del client. -->
+<section class="sec ig-sec" id="instagram" aria-labelledby="ig-t">
+  <div class="wrap">
+    <div class="cap rv">
+      <div>
+        <span class="eyebrow">Instagram</span>
+        <h2 id="ig-t" data-i18n="ig_h2">Al nostre Instagram</h2>
+      </div>
+      <div class="cap-accions"><a class="link" href="https://www.instagram.com/xiringuitolasal/" target="_blank" rel="noopener">@xiringuitolasal ↗<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></div>
+    </div>
+    <ul class="posts">
+      <li class="post rv"><a href="https://www.instagram.com/reel/De1iNUuuGxd/" target="_blank" rel="noopener"><img src="assets/img/ig-5.webp" alt="Recollint les cadires al final de la temporada" data-i18n-alt="ig5_alt" width="512" height="640" loading="lazy" decoding="async"><svg class="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="visually-hidden" data-i18n="ig_open">Obrir la publicació a Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li class="post rv"><a href="https://www.instagram.com/p/DergK1qClMR/" target="_blank" rel="noopener"><img src="assets/img/ig-0.webp" alt="L'equip del Xiringuito somrient a la cuina" data-i18n-alt="ig0_alt" width="512" height="640" loading="lazy" decoding="async"><svg class="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="visually-hidden" data-i18n="ig_open">Obrir la publicació a Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li class="post rv"><a href="https://www.instagram.com/p/DeePfXqCOGt/" target="_blank" rel="noopener"><img src="assets/img/ig-1.webp" alt="Un plat de peix cru amb flors, servit en un plat de ceràmica" data-i18n-alt="ig1_alt" width="512" height="640" loading="lazy" decoding="async"><svg class="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="visually-hidden" data-i18n="ig_open">Obrir la publicació a Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li class="post rv"><a href="https://www.instagram.com/reel/DeRnAIGiIIS/" target="_blank" rel="noopener"><img src="assets/img/ig-2.webp" alt="La paret de fusta pintada amb «La Sal es Xiringuito Ses Oliveres» i un peix vermell" data-i18n-alt="ig2_alt" width="512" height="640" loading="lazy" decoding="async"><svg class="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="visually-hidden" data-i18n="ig_open">Obrir la publicació a Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+      <li class="post rv"><a href="https://www.instagram.com/p/DeHo9TfFNx7/" target="_blank" rel="noopener"><img src="assets/img/ig-3.webp" alt="Clients dinant a la terrassa amb vistes a la badia" data-i18n-alt="ig3_alt" width="512" height="640" loading="lazy" decoding="async"><svg class="ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span class="visually-hidden" data-i18n="ig_open">Obrir la publicació a Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+    </ul>
+    <!-- Separador: els banyistes del dibuix original del client (IMG-Illustracions/banyistes-original.png) -->
+    <div class="separador rv" aria-hidden="true"><span></span><img src="assets/img/banyistes.webp" alt="" width="299" height="320" loading="lazy" decoding="async"><span></span></div>
+  </div>
+</section>
+
+<!-- 6. Samarreta: com a la versió desenfadada. Les dues samarretes (2026 i 2025, totes dues del seu Instagram); es reserva per Instagram -->
+<section class="sec samarreta fusta" id="samarreta" aria-labelledby="shop-t">
+  <div class="wrap sam-grid">
+    <div class="sam-fotos rv">
+      <figure class="sam-f f25"><img src="assets/img/samarreta-2025.webp" alt="La samarreta del 2025, plena de dibuixos de peixos i plats" data-i18n-alt="shop_alt25" width="600" height="750" loading="lazy" decoding="async"><figcaption>2025</figcaption></figure>
+      <figure class="sam-f f26"><img src="assets/img/samarreta-2026.webp" alt="La samarreta del 2026, amb el xiringuito dibuixat" data-i18n-alt="shop_alt26" width="800" height="1000" loading="lazy" decoding="async"><figcaption>2026</figcaption></figure>
+      <span class="sam-preu" aria-hidden="true">25 €</span>
+    </div>
+    <div class="sam-txt rv">
+      <span class="eyebrow" data-i18n="ey_shop">Samarreta</span>
+      <h2 id="shop-t"><span data-i18n="shop_h2a">La samarreta que s'esgota</span> <em data-i18n="shop_h2b">cada estiu</em></h2>
+      <p data-i18n="shop_p">De cotó i dibuixada per a nosaltres. Reserva la teva i te la guardem a la barra.</p>
+      <div class="preu"><strong data-i18n="shop_price">25 €</strong><span data-i18n="shop_how">Es paga i es recull al Xiri</span></div>
+      <div class="accions">
+        <a class="btn btn-fosc" href="https://ig.me/m/xiringuitolasal" data-ig data-msg="Hola! Voldria reservar la samarreta de Xiringuito la Sal (25 €). Talla: ___. Quan la puc passar a buscar?" data-i18n-msg="shop_msg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg><span data-i18n="shop_ig">Reserva-la per Instagram</span><span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a>
+      </div>
+      <p class="talla" data-i18n="shop_talla">Sabem que estàs fet un figurí, però digue'ns la teva talla.</p>
+      <p class="avis-copiat" aria-live="polite" hidden data-i18n="shop_copiat">Missatge copiat: enganxa'l al xat d'Instagram.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Preguntes: el que pregunten els turistes (i ChatGPT). Només dades confirmades pel client o per la seva pròpia comunicació. -->
+<section class="sec faq" id="preguntes" aria-labelledby="faq-t">
+  <div class="wrap faq-grid">
+    <div class="cap-faq rv">
+      <span class="eyebrow" data-i18n="ey_faq">Preguntes</span>
+      <h2 id="faq-t" data-i18n="faq_h2">El que ens pregunten més</h2>
+      <p data-i18n="faq_p">Si tens cap altre dubte, truca'ns i t'ho expliquem.</p>
+      <a class="btn btn-accent faq-tel" href="tel:+34872204041"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>872 20 40 41</span></a>
+      <!-- Dibuix original del client: els banyistes (IMG-Illustracions/banyistes-original.png). -->
+      <img class="faq-il" src="assets/img/banyistes.webp" alt="" aria-hidden="true" width="299" height="320" loading="lazy" decoding="async">
+    </div>
+    <div class="faq-llista rv">
+      <details open><summary data-i18n="q1">Cal reservar?</summary><p data-i18n="a1">Recomanem reservar, sobretot al migdia i els caps de setmana. Les reserves es fan per telèfon: +34 872 20 40 41.</p></details>
+      <details><summary data-i18n="q2">Quin horari feu?</summary><p data-i18n="a2">Obrim cada dia de 9 a 00 h, de març a finals d'octubre. A l'hivern el xiringuito està desmuntat.</p></details>
+      <details><summary data-i18n="q3">On sou exactament?</summary><p data-i18n="a3">A la platja de Ses Oliveres, a l'Avinguda Víctor Rahola, 25, de Cadaqués.</p></details>
+      <details><summary data-i18n="q4">Feu paella?</summary><p data-i18n="a4">Sí, arrossos fets a la paella. El més demanat és l'arròs melós de sípia i gamba vermella. Mínim 2 persones, uns 20 minuts.</p></details>
+      <details><summary data-i18n="q5">Teniu la carta en altres idiomes?</summary><p data-i18n="a5">Sí. La carta és en català, castellà, francès i anglès, aquí a la web i en PDF.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Com arribar: dades + rosa dels vents (enllaç a Google Maps; l'agulla busca el nord en entrar) -->
+<section class="sec arribar" id="arribar" aria-labelledby="arr-t">
+  <div class="wrap">
+    <div class="arr-txt rv">
+      <span class="eyebrow" data-i18n="ey_arr">Com arribar</span>
+      <h2 id="arr-t" data-i18n="arr_h2">Encara que bufi tramuntana, t'esperem</h2>
+      <div class="dades">
+        <div class="dada"><b data-i18n="arr_on">On som</b><span>Platja de Ses Oliveres · Avinguda Víctor Rahola, 25 · 17488 Cadaqués</span></div>
+        <!-- Horari: bio d'Instagram i Joan (19-10-2026) -->
+        <div class="dada"><b data-i18n="arr_horari">Horari</b><span data-i18n="arr_horari_t">Cada dia de 9 a 00 h, de març a finals d'octubre</span></div>
+        <div class="dada"><b data-i18n="arr_tel">Reserves</b><a class="tel" href="tel:+34872204041">+34 872 20 40 41</a></div>
+      </div>
+    </div>
+    <a class="rosa" href="https://maps.app.goo.gl/VqkFJobXDxhRsfKD7" target="_blank" rel="noopener" aria-label="Obrir Xiringuito la Sal a Google Maps" data-i18n-aria="arr_aria">
+      <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+        <circle cx="200" cy="200" r="168" fill="none" stroke="rgba(30,27,24,.22)"/>
+        <circle cx="200" cy="200" r="150" fill="none" stroke="#FF3000" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="143" fill="none" stroke="rgba(30,27,24,.3)" stroke-dasharray="1 6"/>
+        <g class="agulla">
+          <polygon points="200,72 214,200 200,328 186,200" fill="#FF3000"/>
+          <polygon points="200,72 214,200 200,200" fill="#C42200"/>
+          <polygon points="88,200 200,188 312,200 200,212" fill="#1E1B18"/>
+          <polygon points="88,200 200,212 200,200" fill="#57504A"/>
+          <polygon points="122,122 206,194 278,278 194,206" fill="#FF3000" fill-opacity=".45"/>
+          <polygon points="278,122 206,206 122,278 194,194" fill="#FF3000" fill-opacity=".45"/>
+          <circle cx="200" cy="200" r="11" fill="#FBF6EF" stroke="#FF3000" stroke-width="3"/>
+        </g>
+        <text class="vent nord" x="200" y="20" text-anchor="middle">Tramuntana</text>
+        <text class="vent" x="330" y="74" text-anchor="middle">Gregal</text>
+        <text class="vent" x="392" y="204" text-anchor="end">Llevant</text>
+        <text class="vent" x="330" y="340" text-anchor="middle">Xaloc</text>
+        <text class="vent" x="200" y="394" text-anchor="middle">Migjorn</text>
+        <text class="vent" x="70" y="340" text-anchor="middle">Garbí</text>
+        <text class="vent" x="8" y="204" text-anchor="start">Ponent</text>
+        <text class="vent" x="70" y="74" text-anchor="middle">Mestral</text>
+      </svg>
+      <span class="cta"><span data-i18n="arr_cta">Toca la rosa i obre Google Maps</span> ↗</span>
+    <span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a>
+  </div>
+</section>
+
+</main>
+
+<footer class="peu-web">
+  <div class="wrap">
+    <div class="peu-grid">
+      <div class="peu-marca">
+        <a class="brand" href="#xiringuito" aria-label="Xiringuito la Sal"><img src="assets/logo/logo-taronja-160.webp" alt="" width="146" height="160"><span class="brand-nom">Xiringuito la Sal</span></a>
+        <p class="peu-adr">Platja de Ses Oliveres · Avinguda Víctor Rahola, 25 · 17488 Cadaqués, Girona</p>
+      </div>
+      <div>
+        <h3 data-i18n="foot_contacte">Contacte</h3>
+        <ul>
+          <li><a href="tel:+34872204041">+34 872 20 40 41</a></li>
+          <li><a href="https://maps.app.goo.gl/VqkFJobXDxhRsfKD7" target="_blank" rel="noopener">Google Maps<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="arr_horari">Horari</h3>
+        <ul>
+          <li data-i18n="foot_horari1">Cada dia, de 9 a 00 h</li>
+          <li data-i18n="foot_horari2">De març a octubre</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="foot_segueix">Segueix-nos</h3>
+        <ul>
+          <li><a href="https://www.instagram.com/xiringuitolasal/" target="_blank" rel="noopener">Instagram<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+          <li><a href="https://www.tripadvisor.es/Restaurant_Review-g580326-d12834000-Reviews-Xiringuito_La_Sal-Cadaques_Costa_Brava_Province_of_Girona_Catalonia.html" target="_blank" rel="noopener">Tripadvisor<span class="visually-hidden" data-i18n="nova"> (s'obre en una pestanya nova)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Pendent: enllaços a avís legal, privacitat i cookies quan els tinguem -->
+    <div class="peu-baix"><span>© 2026 Xiringuito la Sal</span><span data-i18n="foot_lloc">Ses Oliveres · Cadaqués</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Idiomes ---------- */
+  var T = {
+    ca:{
+      carta_next:"Més plats",
+      carta_prev:"Plats anteriors",
+      shop_alt25:"La samarreta del 2025, plena de dibuixos de peixos i plats",
+      shop_alt26:"La samarreta del 2026, amb el xiringuito dibuixat",
+      shop_talla:"Sabem que estàs fet un figurí, però digue'ns la teva talla.",
+      shop_h2b:"cada estiu",
+      shop_h2a:"La samarreta que s'esgota",
+      ig5_alt:"Recollint les cadires al final de la temporada",
+      amb5_alt:"Un cambrer serveix una paella a la terrassa",
+      amb4_alt:"Un cuiner ensenya un llobregant acabat d'arribar",
+      amb3_alt:"Amics dinant a la terrassa davant la badia",
+      amb2_alt:"Dos amics fent el mandra davant el xiringuito",
+      amb1_alt:"Un cambrer porta cerveses a la terrassa",
+      amb_p:"Cambrers amb ganes de broma, paelles que surten fumejant i la badia de fons.",
+      amb_h2:"Aquí es ve a passar-ho bé",
+      ey_amb:"L'ambient",
+      d8_name:"Croquetes del dia", d8_tag:"Per compartir",
+      a5:"Sí. La carta és en català, castellà, francès i anglès, aquí a la web i en PDF.",
+      q5:"Teniu la carta en altres idiomes?",
+      a4:"Sí, arrossos fets a la paella. El més demanat és l'arròs melós de sípia i gamba vermella. Mínim 2 persones, uns 20 minuts.",
+      q4:"Feu paella?",
+      a3:"A la platja de Ses Oliveres, a l'Avinguda Víctor Rahola, 25, de Cadaqués.",
+      q3:"On sou exactament?",
+      a2:"L'horari canvia segons la temporada. Obrim de primavera a la tardor; per saber l'horari d'avui, truca'ns o mira el nostre Instagram. A l'hivern el xiringuito està desmuntat.",
+      q2:"Quin horari feu?",
+      a1:"No és obligatori: pots venir directament. Si vols assegurar-te taula, sobretot a l'estiu i als migdies, truca'ns al +34 872 20 40 41.",
+      q1:"Cal reservar?",
+      faq_p:"Si tens cap altre dubte, truca'ns i t'ho expliquem.",
+      faq_h2:"El que ens pregunten més",
+      ey_faq:"Preguntes",
+      nova:" (s'obre en una pestanya nova)",
+      pdf_nova:" (PDF, s'obre en una pestanya nova)",
+      nav_tel_aria:"Truca per reservar: 872 20 40 41",
+      carta_text:"Tota la carta en text",
+      rev_p:"4,2 de mitjana entre 1.826 ressenyes a Google.",
+      nota_google:"4,2 a Google · 1.826 ressenyes",
+      menu_aria:"Menú",
+      nav_xiri:"El Xiringuito", nav_shop:"Samarreta", ey_xiri:"El Xiringuito", ey_carta:"La carta", ey_rev:"Opinions", ey_shop:"Samarreta", ey_arr:"Com arribar",
+      xiri_h2:"Som de l'estiu. La resta és platja", xiri_p1:"Instal·lats a la platja de Ses Oliveres des de fa temporades, som una terrassa de fusta i vímet construïda al voltant d'un arbre que ja hi era molt abans que nosaltres.",
+      xiri_p2:"Cada temporada tornem i aixequem la terrassa al voltant del mateix arbre. Quan s'acaba l'estiu ho desmuntem tot, i la platja torna a ser platja fins a l'any següent.",
+      xiri_alt:"La terrassa del Xiringuito la Sal plena de gent dinant",
+      arr_aria:"Obrir Xiringuito la Sal a Google Maps", arr_cta:"Toca la rosa i obre Google Maps",
+      page_title:"Xiringuito la Sal · Xiringuito a la platja a Cadaqués",
+      page_desc:"Xiringuito a la platja de Ses Oliveres, Cadaqués: paella, peix fresc i terrassa davant la badia. De març a octubre. Reserves: +34 872 20 40 41",
+      skip:"Salta al contingut", nav_label:"Principal", lang_label:"Idioma",
+      nav_carta:"La carta", nav_opinions:"Opinions", nav_arribar:"Com arribar", nav_reserva:"Reserva", nav_reserva_aria:"Reserva: 872 20 40 41",
+      band_txt:"Reserva per telèfon",
+      intro_h2:"Som de l'estiu. La resta és platja",
+      intro_p:"Instal·lats a la platja de Ses Oliveres des de fa temporades, som una terrassa de fusta i vímet construïda al voltant d'un arbre que ja hi era molt abans que nosaltres.",
+      intro_p2:"Cuina de mar feta sense presses i la badia de Cadaqués davant la taula.",
+      intro_link:"Mira què cuinem", intro_alt:"La badia de Cadaqués vista des d'una taula de la terrassa",
+      carta_h2:"Dinar davant la badia de Cadaqués", carta_p:"Paella d'arròs melós, peix del dia, coses per picar i postres.",
+      carta_btn:"Veure la carta", carta_btn2:"Français · English",
+      d1_tag:"El que més es demana", d1_name:"Arròs melós de sípia i gamba vermella",
+      d2_tag:"Per picar", d2_name:"Les anxoves de l'Eni",
+      d3_tag:"Fregits", d3_name:"Calamars a l'andalusa amb all i oli blanc i negre",
+      d4_tag:"Del dia", d4_name:"Peix del dia, sempre fresc",
+      d5_tag:"El clàssic", d5_name:"El nostre turbot fregit",
+      d6_tag:"Cru i fresc", d6_name:"Tiradito del dia",
+      d7_tag:"Postres", d7_name:"Coulant de xocolata amb gelat d'avellana",
+      nota_h3:"Abans de demanar", nota_p1:"Arrossos: mínim 2 persones, uns 20 minuts.", nota_p2:"Recomanem reservar, sobretot al migdia i els caps de setmana.",
+      rev_h2:"Què en diuen de nosaltres?", rev_prev:"Ressenya anterior", rev_next:"Ressenya següent", rev_google:"Llegeix-les totes a Google", rev_5:"5 de 5 estrelles", rev_4:"4 de 5 estrelles",
+      shop_h2:"Emporta't un tros del Xiringuito", shop_p:"De cotó i dibuixada per a nosaltres. Reserva la teva i te la guardem a la barra.", shop_price:"25 €", shop_how:"Es paga i es recull al Xiri", shop_wa:"Per WhatsApp", shop_ig:"Reserva-la per Instagram", shop_copiat:"Missatge copiat: enganxa'l al xat d'Instagram.",
+      shop_msg:"Hola! Voldria reservar la samarreta de Xiringuito la Sal (25 €). Talla: ___. Quan la puc passar a buscar?", shop_alt:"La samarreta de Xiringuito la Sal penjada al porxo",
+      ig_h2:"Al nostre Instagram", ig_open:"Obrir la publicació a Instagram",
+      ig0_alt:"L'equip del Xiringuito somrient a la cuina", ig1_alt:"Un plat de peix cru amb flors, servit en un plat de ceràmica", ig2_alt:"La paret de fusta pintada amb «La Sal es Xiringuito Ses Oliveres» i un peix vermell", ig3_alt:"Clients dinant a la terrassa amb vistes a la badia", ig4_alt:"Una paella d'arròs amb gambes vermelles",
+      arr_h2:"Encara que bufi tramuntana, t'esperem", arr_on:"On som", arr_horari:"Horari", arr_horari_t:"Segons la temporada, de primavera a la tardor. Truca'ns per saber l'horari d'avui.", arr_tel:"Reserves", arr_btn:"Obrir a Google Maps", arr_alt:"La costa de Cadaqués vista des de la platja de Ses Oliveres",
+      foot_contacte:"Contacte", foot_horari1:"Segons la temporada", foot_horari2:"De primavera a la tardor", foot_segueix:"Segueix-nos", foot_lloc:"Ses Oliveres · Cadaqués"
+    },
+    es:{
+      carta_next:"Más platos",
+      carta_prev:"Platos anteriores",
+      shop_alt25:"La camiseta de 2025, llena de dibujos de peces y platos",
+      shop_alt26:"La camiseta de 2026, con el chiringuito dibujado",
+      shop_talla:"Sabemos que estás hecho un figurín, pero dinos tu talla.",
+      shop_h2b:"cada verano",
+      shop_h2a:"La camiseta que se agota",
+      ig5_alt:"Recogiendo las sillas al final de la temporada",
+      amb5_alt:"Un camarero sirve una paella en la terraza",
+      amb4_alt:"Un cocinero enseña un bogavante recién llegado",
+      amb3_alt:"Amigos comiendo en la terraza frente a la bahía",
+      amb2_alt:"Dos amigos descansando delante del chiringuito",
+      amb1_alt:"Un camarero lleva cervezas a la terraza",
+      amb_p:"Camareros con ganas de broma, paellas que salen humeantes y la bahía de fondo.",
+      amb_h2:"Aquí se viene a pasarlo bien",
+      ey_amb:"El ambiente",
+      d8_name:"Croquetas del día", d8_tag:"Para compartir",
+      a5:"Sí. La carta está en catalán, castellano, francés e inglés, aquí en la web y en PDF.",
+      q5:"¿Tenéis la carta en otros idiomas?",
+      a4:"Sí, arroces hechos en paella. El más pedido es el arroz meloso de sepia y gamba roja. Mínimo 2 personas, unos 20 minutos.",
+      q4:"¿Hacéis paella?",
+      a3:"En la playa de Ses Oliveres, en la Avinguda Víctor Rahola, 25, de Cadaqués.",
+      q3:"¿Dónde estáis exactamente?",
+      a2:"El horario cambia según la temporada. Abrimos de primavera a otoño; para saber el horario de hoy, llámanos o mira nuestro Instagram. En invierno el chiringuito está desmontado.",
+      q2:"¿Qué horario tenéis?",
+      a1:"No es obligatorio: puedes venir directamente. Si quieres asegurarte mesa, sobre todo en verano y a mediodía, llámanos al +34 872 20 40 41.",
+      q1:"¿Hace falta reservar?",
+      faq_p:"Si tienes cualquier otra duda, llámanos y te lo contamos.",
+      faq_h2:"Lo que más nos preguntan",
+      ey_faq:"Preguntas",
+      nova:" (se abre en una pestaña nueva)",
+      pdf_nova:" (PDF, se abre en una pestaña nueva)",
+      nav_tel_aria:"Llama para reservar: 872 20 40 41",
+      carta_text:"Toda la carta en texto",
+      rev_p:"4,2 de media entre 1.826 reseñas en Google.",
+      nota_google:"4,2 en Google · 1.826 reseñas",
+      menu_aria:"Menú",
+      nav_xiri:"El Xiringuito", nav_shop:"Camiseta", ey_xiri:"El Xiringuito", ey_carta:"La carta", ey_rev:"Opiniones", ey_shop:"Camiseta", ey_arr:"Cómo llegar",
+      xiri_h2:"Somos del verano. Lo demás es playa", xiri_p1:"Instalados en la playa de Ses Oliveres desde hace temporadas, somos una terraza de madera y mimbre construida alrededor de un árbol que ya estaba aquí mucho antes que nosotros.",
+      xiri_p2:"Cada temporada volvemos y levantamos la terraza alrededor del mismo árbol. Cuando acaba el verano lo desmontamos todo y la playa vuelve a ser playa hasta el año siguiente.",
+      xiri_alt:"La terraza del Xiringuito la Sal llena de gente comiendo",
+      arr_aria:"Abrir Xiringuito la Sal en Google Maps", arr_cta:"Toca la rosa y abre Google Maps",
+      page_title:"Xiringuito la Sal · Chiringuito en la playa en Cadaqués",
+      page_desc:"Chiringuito en la playa de Ses Oliveres, Cadaqués: paella, pescado fresco y terraza frente a la bahía. De marzo a octubre. Reservas: +34 872 20 40 41",
+      skip:"Saltar al contenido", nav_label:"Principal", lang_label:"Idioma",
+      nav_carta:"La carta", nav_opinions:"Opiniones", nav_arribar:"Cómo llegar", nav_reserva:"Reserva", nav_reserva_aria:"Reserva: 872 20 40 41",
+      band_txt:"Reserva por teléfono",
+      intro_h2:"Somos del verano. Lo demás es playa",
+      intro_p:"Instalados en la playa de Ses Oliveres desde hace temporadas, somos una terraza de madera y mimbre construida alrededor de un árbol que ya estaba aquí mucho antes que nosotros.",
+      intro_p2:"Cocina de mar hecha sin prisas y la bahía de Cadaqués frente a la mesa.",
+      intro_link:"Mira qué cocinamos", intro_alt:"La bahía de Cadaqués vista desde una mesa de la terraza",
+      carta_h2:"Comer frente a la bahía de Cadaqués", carta_p:"Paella de arroz meloso, pescado del día, cosas para picar y postres.",
+      carta_btn:"Ver la carta", carta_btn2:"Français · English",
+      d1_tag:"El más pedido", d1_name:"Arroz meloso de sepia y gamba roja",
+      d2_tag:"Para picar", d2_name:"Las anchoas del Eni",
+      d3_tag:"Fritos", d3_name:"Calamares a la andaluza con alioli blanco y negro",
+      d4_tag:"Del día", d4_name:"Pescado del día, siempre fresco",
+      d5_tag:"El clásico", d5_name:"Nuestro rodaballo frito",
+      d6_tag:"Crudo y fresco", d6_name:"Tiradito del día",
+      d7_tag:"Postres", d7_name:"Coulant de chocolate con helado de avellana",
+      nota_h3:"Antes de pedir", nota_p1:"Arroces: mínimo 2 personas, unos 20 minutos.", nota_p2:"Recomendamos reservar, sobre todo al mediodía y los fines de semana.",
+      rev_h2:"¿Qué dicen de nosotros?", rev_prev:"Reseña anterior", rev_next:"Reseña siguiente", rev_google:"Léelas todas en Google", rev_5:"5 de 5 estrellas", rev_4:"4 de 5 estrellas",
+      shop_h2:"Llévate un trozo del Xiringuito", shop_p:"De algodón y dibujada para nosotros. Reserva la tuya y te la guardamos en la barra.", shop_price:"25 €", shop_how:"Se paga y se recoge en el Xiri", shop_wa:"Por WhatsApp", shop_ig:"Resérvala por Instagram", shop_copiat:"Mensaje copiado: pégalo en el chat de Instagram.",
+      shop_msg:"¡Hola! Quería reservar la camiseta de Xiringuito la Sal (25 €). Talla: ___. ¿Cuándo puedo pasar a recogerla?", shop_alt:"La camiseta de Xiringuito la Sal colgada en el porche",
+      ig_h2:"En nuestro Instagram", ig_open:"Abrir la publicación en Instagram",
+      ig0_alt:"El equipo del Xiringuito sonriendo en la cocina", ig1_alt:"Un plato de pescado crudo con flores, en un plato de cerámica", ig2_alt:"La pared de madera pintada con «La Sal es Xiringuito Ses Oliveres» y un pez rojo", ig3_alt:"Clientes comiendo en la terraza con vistas a la bahía", ig4_alt:"Una paella de arroz con gambas rojas",
+      arr_h2:"Aunque sople la tramontana, te esperamos", arr_on:"Dónde estamos", arr_horari:"Horario", arr_horari_t:"Según la temporada, de primavera a otoño. Llámanos para saber el horario de hoy.", arr_tel:"Reservas", arr_btn:"Abrir en Google Maps", arr_alt:"La costa de Cadaqués vista desde la playa de Ses Oliveres",
+      foot_contacte:"Contacto", foot_horari1:"Según la temporada", foot_horari2:"De primavera a otoño", foot_segueix:"Síguenos", foot_lloc:"Ses Oliveres · Cadaqués"
+    },
+    fr:{
+      carta_next:"Plus de plats",
+      carta_prev:"Plats précédents",
+      shop_alt25:"Le t-shirt 2025, couvert de dessins de poissons et de plats",
+      shop_alt26:"Le t-shirt 2026, avec le xiringuito dessiné",
+      shop_talla:"On sait que vous êtes très élégant, mais dites-nous votre taille.",
+      shop_h2b:"chaque été",
+      shop_h2a:"Le t-shirt qui s'arrache",
+      ig5_alt:"On range les chaises en fin de saison",
+      amb5_alt:"Un serveur apporte une paella en terrasse",
+      amb4_alt:"Un cuisinier montre un homard tout juste arrivé",
+      amb3_alt:"Des amis déjeunent en terrasse face à la baie",
+      amb2_alt:"Deux amis au repos devant le xiringuito",
+      amb1_alt:"Un serveur apporte des bières en terrasse",
+      amb_p:"Des serveurs qui aiment plaisanter, des paellas fumantes et la baie en toile de fond.",
+      amb_h2:"Ici, on vient passer un bon moment",
+      ey_amb:"L'ambiance",
+      d8_name:"Croquettes du jour", d8_tag:"À partager",
+      a5:"Oui. La carte existe en catalan, espagnol, français et anglais, ici sur le site et en PDF.",
+      q5:"La carte est-elle en français ?",
+      a4:"Oui, des riz cuisinés dans la poêle à paella. Le plus demandé : le riz crémeux à la seiche et aux crevettes rouges. Minimum 2 personnes, environ 20 minutes.",
+      q4:"Vous faites de la paella ?",
+      a3:"Sur la plage de Ses Oliveres, Avinguda Víctor Rahola 25, à Cadaqués.",
+      q3:"Où êtes-vous exactement ?",
+      a2:"Les horaires changent selon la saison. Nous ouvrons du printemps à l'automne ; pour connaître les horaires du jour, appelez-nous ou regardez notre Instagram. L'hiver, le xiringuito est démonté.",
+      q2:"Quels sont vos horaires ?",
+      a1:"Ce n'est pas obligatoire : vous pouvez venir directement. Pour être sûr d'avoir une table, surtout l'été et à midi, appelez-nous au +34 872 20 40 41.",
+      q1:"Faut-il réserver ?",
+      faq_p:"Une autre question ? Appelez-nous, on vous répond.",
+      faq_h2:"Vos questions les plus fréquentes",
+      ey_faq:"Questions",
+      nova:" (s'ouvre dans un nouvel onglet)",
+      pdf_nova:" (PDF, s'ouvre dans un nouvel onglet)",
+      nav_tel_aria:"Appelez pour réserver : 872 20 40 41",
+      carta_text:"Toute la carte en texte",
+      rev_p:"4,2 de moyenne sur 1 826 avis Google.",
+      nota_google:"4,2 sur Google · 1 826 avis",
+      menu_aria:"Menu",
+      nav_xiri:"Le Xiringuito", nav_shop:"T-shirt", ey_xiri:"Le Xiringuito", ey_carta:"La carte", ey_rev:"Avis", ey_shop:"T-shirt", ey_arr:"Accès",
+      xiri_h2:"On est de l'été. Le reste, c'est la plage", xiri_p1:"Installés sur la plage de Ses Oliveres depuis plusieurs saisons, nous sommes une terrasse en bois et en osier, construite autour d'un arbre qui était là bien avant nous.",
+      xiri_p2:"Chaque saison, nous revenons monter la terrasse autour du même arbre. À la fin de l'été, nous démontons tout et la plage redevient plage jusqu'à l'année suivante.",
+      xiri_alt:"La terrasse du Xiringuito la Sal pleine de monde",
+      arr_aria:"Ouvrir Xiringuito la Sal dans Google Maps", arr_cta:"Touchez la rose pour ouvrir Google Maps",
+      page_title:"Xiringuito la Sal · Restaurant de plage à Cadaqués",
+      page_desc:"Restaurant de plage à Ses Oliveres, Cadaqués : paella, poisson frais, terrasse face à la baie. De mars à octobre. Réservations : +34 872 20 40 41",
+      skip:"Aller au contenu", nav_label:"Principale", lang_label:"Langue",
+      nav_carta:"La carte", nav_opinions:"Avis", nav_arribar:"Accès", nav_reserva:"Réserver", nav_reserva_aria:"Réserver : 872 20 40 41",
+      band_txt:"Réserver par téléphone",
+      intro_h2:"On est de l'été. Le reste, c'est la plage",
+      intro_p:"Installés sur la plage de Ses Oliveres depuis plusieurs saisons, nous sommes une terrasse en bois et en osier, construite autour d'un arbre qui était là bien avant nous.",
+      intro_p2:"Une cuisine de la mer, sans se presser, et la baie de Cadaqués devant la table.",
+      intro_link:"Voir ce qu'on cuisine", intro_alt:"La baie de Cadaqués vue depuis une table de la terrasse",
+      carta_h2:"Déjeuner face à la baie de Cadaqués", carta_p:"Paella de riz crémeux, poisson du jour, petites assiettes et desserts.",
+      carta_btn:"Voir la carte", carta_btn2:"Català · Castellano",
+      d1_tag:"Le plus demandé", d1_name:"Riz crémeux à la seiche et crevette rouge",
+      d2_tag:"À grignoter", d2_name:"Les anchois d'Eni",
+      d3_tag:"Fritures", d3_name:"Calamars à l'andalouse, aïoli blanc et noir",
+      d4_tag:"Du jour", d4_name:"Poisson du jour, toujours frais",
+      d5_tag:"Le classique", d5_name:"Notre turbot frit",
+      d6_tag:"Cru et frais", d6_name:"Tiradito du jour",
+      d7_tag:"Dessert", d7_name:"Coulant au chocolat, glace noisette",
+      nota_h3:"Avant de commander", nota_p1:"Riz : minimum 2 personnes, environ 20 minutes.", nota_p2:"Réservation conseillée, surtout à midi et le week-end.",
+      rev_h2:"Qu'est-ce qu'on dit de nous ?", rev_prev:"Avis précédent", rev_next:"Avis suivant", rev_google:"Lire tous les avis sur Google", rev_5:"5 étoiles sur 5", rev_4:"4 étoiles sur 5",
+      shop_h2:"Emportez un morceau du Xiringuito", shop_p:"En coton et dessiné pour nous. Réservez le vôtre, on vous le garde au bar.", shop_price:"25 €", shop_how:"À payer et à récupérer au Xiri", shop_wa:"Par WhatsApp", shop_ig:"Réservez-le sur Instagram", shop_copiat:"Message copié : collez-le dans le chat Instagram.",
+      shop_msg:"Bonjour ! Je voudrais réserver le t-shirt de Xiringuito la Sal (25 €). Taille : ___. Quand puis-je passer le récupérer ?", shop_alt:"Le t-shirt de Xiringuito la Sal suspendu sous le porche",
+      ig_h2:"Sur notre Instagram", ig_open:"Ouvrir la publication sur Instagram",
+      ig0_alt:"L'équipe du Xiringuito souriante en cuisine", ig1_alt:"Une assiette de poisson cru aux fleurs, dans une assiette en céramique", ig2_alt:"Le mur en bois peint « La Sal es Xiringuito Ses Oliveres » avec un poisson rouge", ig3_alt:"Des clients déjeunant en terrasse face à la baie", ig4_alt:"Une paella de riz aux crevettes rouges",
+      arr_h2:"Même quand souffle la tramontane, on vous attend", arr_on:"Où nous trouver", arr_horari:"Horaires", arr_horari_t:"Selon la saison, du printemps à l'automne. Appelez-nous pour les horaires du jour.", arr_tel:"Réservations", arr_btn:"Ouvrir dans Google Maps", arr_alt:"La côte de Cadaqués vue depuis la plage de Ses Oliveres",
+      foot_contacte:"Contact", foot_horari1:"Selon la saison", foot_horari2:"Du printemps à l'automne", foot_segueix:"Suivez-nous", foot_lloc:"Ses Oliveres · Cadaqués"
+    },
+    en:{
+      carta_next:"More dishes",
+      carta_prev:"Previous dishes",
+      shop_alt25:"The 2025 T-shirt, covered in drawings of fish and dishes",
+      shop_alt26:"The 2026 T-shirt, with the beach bar drawn on it",
+      shop_talla:"We know you're looking sharp, but tell us your size.",
+      shop_h2b:"every summer",
+      shop_h2a:"The T-shirt that sells out",
+      ig5_alt:"Packing away the chairs at the end of the season",
+      amb5_alt:"A waiter serving a paella on the terrace",
+      amb4_alt:"A cook showing off a freshly caught lobster",
+      amb3_alt:"Friends having lunch on the terrace by the bay",
+      amb2_alt:"Two friends taking it easy outside the beach bar",
+      amb1_alt:"A waiter carrying beers across the terrace",
+      amb_p:"Waiters who love a joke, paellas straight off the fire and the bay as a backdrop.",
+      amb_h2:"People come here to have a good time",
+      ey_amb:"The vibe",
+      d8_name:"Croquettes of the day", d8_tag:"To share",
+      a5:"Yes. The menu is in Catalan, Spanish, French and English, here on the website and as a PDF.",
+      q5:"Is the menu in English?",
+      a4:"Yes, rice dishes cooked in the paella pan. The most ordered is creamy rice with cuttlefish and red prawn. Minimum 2 people, about 20 minutes.",
+      q4:"Do you serve paella?",
+      a3:"On Ses Oliveres beach, at Avinguda Víctor Rahola 25, in Cadaqués.",
+      q3:"Where exactly are you?",
+      a2:"Opening hours change with the season. We open from spring to autumn; to check today's hours, give us a call or look at our Instagram. In winter the beach bar is taken down.",
+      q2:"When are you open?",
+      a1:"You don't have to: you can just turn up. If you want to be sure of a table, especially in summer and at lunchtime, call us on +34 872 20 40 41.",
+      q1:"Do I need to book?",
+      faq_p:"Any other question? Give us a call.",
+      faq_h2:"Before you come",
+      ey_faq:"FAQ",
+      nova:" (opens in a new tab)",
+      pdf_nova:" (PDF, opens in a new tab)",
+      nav_tel_aria:"Call to book: 872 20 40 41",
+      carta_text:"Full menu as text",
+      rev_p:"Rated 4.2 on average across 1,826 Google reviews.",
+      nota_google:"4.2 on Google · 1,826 reviews",
+      menu_aria:"Menu",
+      nav_xiri:"The Xiringuito", nav_shop:"T-shirt", ey_xiri:"The Xiringuito", ey_carta:"The menu", ey_rev:"Reviews", ey_shop:"T-shirt", ey_arr:"Getting here",
+      xiri_h2:"We belong to summer. The rest is beach", xiri_p1:"Set up on Ses Oliveres beach for several seasons, we are a wood-and-wicker terrace built around a tree that was here long before us.",
+      xiri_p2:"Every season we come back and put the terrace up around the same tree. When summer ends we take it all down, and the beach is a beach again until next year.",
+      xiri_alt:"The Xiringuito la Sal terrace full of people having lunch",
+      arr_aria:"Open Xiringuito la Sal in Google Maps", arr_cta:"Tap the compass to open Google Maps",
+      page_title:"Xiringuito la Sal · Beach bar & restaurant in Cadaqués",
+      page_desc:"Beach bar on Ses Oliveres beach, Cadaqués: paella, fresh fish and a terrace on the bay. Open March to October. Bookings: +34 872 20 40 41",
+      skip:"Skip to content", nav_label:"Main", lang_label:"Language",
+      nav_carta:"Menu", nav_opinions:"Reviews", nav_arribar:"Getting here", nav_reserva:"Book", nav_reserva_aria:"Book: 872 20 40 41",
+      band_txt:"Book by phone",
+      intro_h2:"We belong to summer. The rest is beach",
+      intro_p:"Set up on Ses Oliveres beach for several seasons, we are a wood-and-wicker terrace built around a tree that was here long before us.",
+      intro_p2:"Seafood cooked without hurry, with the bay of Cadaqués in front of your table.",
+      intro_link:"See what we cook", intro_alt:"Cadaqués bay seen from a table on the terrace",
+      carta_h2:"Lunch facing the bay of Cadaqués", carta_p:"Paella-style creamy rice, catch of the day, small plates and desserts.",
+      carta_btn:"See the menu", carta_btn2:"Català · Castellano",
+      d1_tag:"Most ordered", d1_name:"Creamy rice with cuttlefish and red prawn",
+      d2_tag:"To share", d2_name:"Eni's anchovies",
+      d3_tag:"Fried", d3_name:"Andalusian-style squid with black and white aioli",
+      d4_tag:"Today", d4_name:"Catch of the day, always fresh",
+      d5_tag:"The classic", d5_name:"Our fried turbot",
+      d6_tag:"Raw and fresh", d6_name:"Tiradito of the day",
+      d7_tag:"Dessert", d7_name:"Chocolate coulant with hazelnut ice cream",
+      nota_h3:"Before you order", nota_p1:"Rice dishes: minimum 2 people, about 20 minutes.", nota_p2:"Booking recommended, especially at lunchtime and at weekends.",
+      rev_h2:"What do people say about us?", rev_prev:"Previous review", rev_next:"Next review", rev_google:"Read them all on Google", rev_5:"5 out of 5 stars", rev_4:"4 out of 5 stars",
+      shop_h2:"Take a piece of the Xiringuito home", shop_p:"Cotton, and drawn just for us. Reserve yours and we'll keep it behind the bar.", shop_price:"€25", shop_how:"Pay and pick it up at the Xiri", shop_wa:"On WhatsApp", shop_ig:"Reserve it on Instagram", shop_copiat:"Message copied: paste it into the Instagram chat.",
+      shop_msg:"Hi! I'd like to reserve the Xiringuito la Sal T-shirt (€25). Size: ___. When can I pick it up?", shop_alt:"The Xiringuito la Sal t-shirt hanging on the porch",
+      ig_h2:"On our Instagram", ig_open:"Open the post on Instagram",
+      ig0_alt:"The Xiringuito team smiling in the kitchen", ig1_alt:"A raw fish dish with flowers on a ceramic plate", ig2_alt:"The painted wooden wall reading «La Sal es Xiringuito Ses Oliveres» with a red fish", ig3_alt:"Guests having lunch on the terrace overlooking the bay", ig4_alt:"A paella with red prawns",
+      arr_h2:"Even when the tramontana blows, we're waiting for you", arr_on:"Where we are", arr_horari:"Opening hours", arr_horari_t:"Depends on the season, spring to autumn. Call us for today's hours.", arr_tel:"Bookings", arr_btn:"Open in Google Maps", arr_alt:"The Cadaqués coastline seen from Ses Oliveres beach",
+      foot_contacte:"Contact", foot_horari1:"Depends on the season", foot_horari2:"Spring to autumn", foot_segueix:"Follow us", foot_lloc:"Ses Oliveres · Cadaqués"
+    }
+  };
+  var PDF = {caes:'assets/carta/carta-ca-es.pdf', fren:'assets/carta/carta-fr-en.pdf'};
+
+  function setLang(lang){
+    var d = T[lang]; if(!d) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if(d[k] !== undefined) el.textContent = d[k]; });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){ var k = el.getAttribute('data-i18n-alt'); if(d[k] !== undefined) el.alt = d[k]; });
+    document.querySelectorAll('[data-i18n-msg]').forEach(function(el){ var k = el.getAttribute('data-i18n-msg'); if(d[k] !== undefined) el.setAttribute('data-msg', d[k]); });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el){ var k = el.getAttribute('data-i18n-aria'); if(d[k] !== undefined) el.setAttribute('aria-label', d[k]); });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    // La carta s'obre en l'idioma de la pàgina; el segon botó dona l'altre PDF
+    var fr = lang === 'fr' || lang === 'en';
+    document.querySelectorAll('[data-carta]').forEach(function(a){ a.href = fr ? PDF.fren : PDF.caes; });
+    document.querySelectorAll('[data-carta-altra]').forEach(function(a){ a.href = fr ? PDF.caes : PDF.fren; });
+    document.documentElement.lang = lang;
+    document.title = d.page_title;
+    document.querySelector('meta[name="description"]').content = d.page_desc;
+    try{ localStorage.setItem('xiri-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  var start = new URLSearchParams(location.search).get('lang');
+  if(!T[start]){ try{ start = localStorage.getItem('xiri-lang'); }catch(e){} }
+  if(!T[start]){ start = (navigator.language || 'ca').slice(0,2).toLowerCase(); }
+  if(T[start] && start !== 'ca') setLang(start);
+
+  /* ---------- Idioma ----------
+     Primera visita de la sessió: si el navegador parla un altre idioma de la web, s'obre aquesta mateixa pàgina en el seu idioma
+     (altres idiomes, en anglès). Si la persona tria un idioma, es respecta sempre. Els cercadors no es redirigeixen.
+     En canviar d'idioma, la pàgina nova s'obre al mateix punt on era (no torna a dalt). */
+  var IDIOMES = ['ca', 'es', 'fr', 'en'];
+  function enllacIdioma(l){ return document.querySelector('.lang a[hreflang="' + l + '"]'); }
+  (function(){
+    try{
+      if(/bot|crawl|spider|slurp|google|bing|yandex|lighthouse|headless/i.test(navigator.userAgent)) return;
+      if(localStorage.getItem('xiri-lang') || sessionStorage.getItem('xiri-auto')) return;
+      sessionStorage.setItem('xiri-auto', '1');
+      var pref = (navigator.languages || [navigator.language || '']).map(function(l){ return String(l).slice(0, 2).toLowerCase(); });
+      var vol = pref.filter(function(l){ return IDIOMES.indexOf(l) > -1; })[0] || 'en';
+      var a = enllacIdioma(vol);
+      if(vol !== document.documentElement.lang && a) location.replace(a.href);
+    }catch(e){}
+  })();
+  document.querySelectorAll('.lang a').forEach(function(a){
+    a.addEventListener('click', function(){
+      try{
+        localStorage.setItem('xiri-lang', a.getAttribute('hreflang'));
+        var navH = document.getElementById('nav').offsetHeight, actual = null;
+        document.querySelectorAll('main > section, main > .franja').forEach(function(sec){ if(sec.id && sec.getBoundingClientRect().top <= navH + 1) actual = sec; });
+        if(actual) sessionStorage.setItem('xiri-pos', JSON.stringify({id: actual.id, dy: window.scrollY - actual.offsetTop}));
+      }catch(e){}
+    });
+  });
+  try{
+    var pos = JSON.parse(sessionStorage.getItem('xiri-pos') || 'null');
+    sessionStorage.removeItem('xiri-pos');
+    var desti = pos && document.getElementById(pos.id);
+    if(desti) window.scrollTo({top: desti.offsetTop + pos.dy, behavior: 'instant'});
+  }catch(e){}
+
+  /* ---------- Carrusel de plats (mòbil i tauleta): punts que diuen quantes fotos hi ha i quina es veu ---------- */
+  document.querySelectorAll('.plats').forEach(function(llista){
+    var items = llista.children, punts = document.createElement('div');
+    punts.className = 'punts'; punts.setAttribute('aria-hidden', 'true');
+    for(var i = 0; i < items.length; i++) punts.appendChild(document.createElement('span'));
+    llista.parentNode.insertBefore(punts, llista.nextSibling);
+    var marca = function(){
+      var n = Math.round(llista.scrollLeft / Math.max(1, llista.clientWidth));
+      for(var j = 0; j < punts.children.length; j++) punts.children[j].classList.toggle('on', j === n);
+    };
+    llista.addEventListener('scroll', function(){ requestAnimationFrame(marca); }, {passive:true});
+    marca();
+  });
+
+  /* ---------- Menú hamburguesa (mòbil i tauleta) ---------- */
+  var navEl = document.getElementById('nav'), hamb = navEl.querySelector('.hamb');
+  function tanca(){ navEl.classList.remove('obert'); hamb.setAttribute('aria-expanded', 'false'); }
+  hamb.addEventListener('click', function(){
+    var obre = !navEl.classList.contains('obert');
+    navEl.classList.toggle('obert', obre); hamb.setAttribute('aria-expanded', String(obre));
+  });
+  navEl.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click', tanca); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && navEl.classList.contains('obert')){ tanca(); hamb.focus(); } });
+  matchMedia('(min-width:961px)').addEventListener('change', function(e){ if(e.matches) tanca(); });
+
+  /* ---------- Capçalera: sòlida (transparent només si hi ha portada amb foto); al mòbil s'amaga en baixar ---------- */
+  var nav = document.getElementById('nav'), hero = document.querySelector('.hero');
+  var lastY = window.scrollY, ticking = false, mobil = matchMedia('(max-width:860px)');
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY;
+      nav.classList.toggle('solid', !hero || y > hero.offsetHeight - nav.offsetHeight - 1);
+      if(Math.abs(y - lastY) >= 6){
+        nav.classList.toggle('amagat', mobil.matches && y > lastY && y > nav.offsetHeight * 2 && !nav.classList.contains('obert') && !nav.contains(document.activeElement));
+        lastY = y;
+      }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- Opinions: se'n veuen 3 (2 a la tauleta, 1 al mòbil); les fletxes les fan rotar ---------- */
+  var llista = document.getElementById('ressenyes');
+  if(llista){
+    var items = [].slice.call(llista.children), inici = 0;
+    var mqT = matchMedia('(max-width:1000px)'), mqM = matchMedia('(max-width:640px)');
+    var quantes = function(){ return mqM.matches ? 1 : mqT.matches ? 2 : 3; };
+    var pinta = function(anim){
+      var n = quantes();
+      items.forEach(function(li, i){
+        var pos = (i - inici + items.length) % items.length;
+        li.hidden = pos >= n; li.style.order = pos; li.classList.remove('entra');
+        document.querySelectorAll('.opinions .fletxa').forEach(function(b){ b.hidden = items.length <= n; });
+        if(anim && !li.hidden){ void li.offsetWidth; li.classList.add('entra'); }
+      });
+    };
+    var mou = function(pas){ inici = (inici + pas + items.length) % items.length; pinta(true); };
+    document.querySelector('.opinions .fletxa.prev').addEventListener('click', function(){ mou(-1); });
+    document.querySelector('.opinions .fletxa.next').addEventListener('click', function(){ mou(1); });
+    [mqT, mqM].forEach(function(mq){ mq.addEventListener('change', function(){ pinta(false); }); });
+    pinta(false);
+  }
+
+  /* ---------- Carta: les fletxes passen els plats d'un en un ---------- */
+  var plats = document.querySelector('.plats');
+  if(plats){
+    var pas = function(d){ var c = plats.querySelector('.plat'); if(c) plats.scrollBy({ left: d * (c.getBoundingClientRect().width + 24), behavior: 'smooth' }); };
+    document.querySelector('.plats-ant').addEventListener('click', function(){ pas(-1); });
+    document.querySelector('.plats-seg').addEventListener('click', function(){ pas(1); });
+  }
+
+  /* ---------- Samarreta: missatge de reserva ja escrit (WhatsApp) o copiat (Instagram) ---------- */
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.addEventListener('click', function(){ a.href = 'https://wa.me/' + a.dataset.wa + '?text=' + encodeURIComponent(a.dataset.msg); });
+  });
+  document.querySelectorAll('[data-ig]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var avis = document.querySelector('.avis-copiat');
+      try{ navigator.clipboard.writeText(a.dataset.msg).then(function(){ if(avis) avis.hidden = false; }); }catch(e){}
+    });
+  });
+
+  /* ---------- La rosa busca el nord quan entra a la pantalla ---------- */
+  var rosa = document.querySelector('.rosa');
+  if('IntersectionObserver' in window && rosa){
+    var ior = new IntersectionObserver(function(es){ if(es[0].isIntersecting){ rosa.classList.add('is-visible'); ior.disconnect(); } }, {threshold:.45});
+    ior.observe(rosa);
+  }
+
+  /* ---------- Aparició suau dels blocs ---------- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vist'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('vist'); }); }
+})();
+</script>
+</body>
+</html>
